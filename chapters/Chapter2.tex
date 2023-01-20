@@ -1,0 +1,102 @@
+% Chapter 2
+\chapter{Literature Review Methodology} % Main chapter title
+
+\label{Chapter2} % For referencing the chapter elsewhere, use \ref{Chapter1} 
+
+In this study, we plan to address half of the research questions through a literature review. Hence, we decided to follow a structured and systematic way of reviewing literature. 
+
+A systematic literature review is one type of literature review that has a formal and structured procedure to synthesize the knowledge of existing research studies that are relevant to answer a pre-defined research questions \cite{kofod-petersen_how_nodate, kitchenham_guidelines_2007}. It allow us to understand the current state of the literature and identify research gaps\cite{carrera-rivera_how-conduct_2022}. 
+
+This systematic literature review has two main objectives. First, to identify existing solutions that leverage Digital Twin to enhance security principles for IoT applications. As an extension and subsection of this objective, the concrete concept of the Digital Twin will be synthesised on the way. Second, to identify research studies conducted on the matter of establishing a secure communication channel between Digital Twin and Iot through cryptographic authentication mechanisms.  
+
+We adopted Kitchenham and Charter three phases of performing systematic literature review; namely, planning protocol, conducting review, and reporting review. Basing this guideline and other resources, we created flow diagram for conducting review review process. The flow diagram of the scheme is depicted in Figure \ref{fig:slr-proc}. 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{images/slrmethoddiagram_v2.png}
+    \caption{Scheme of 2nd stage (conducting review) }
+    \label{fig:slr-proc}
+\end{figure}
+
+
+To automate the systematic literature review process, from defining the PICOC to data extraction, we use a web tool called \textit{parsif.al}\footnote{\href{https://parsif.al}{Parsifal} is an online tool designed to support researchers in performing systematic literature reviews within the context of software engineering. Geographically distributed researchers can work together within a shared workspace, designing the protocol and conducting the research}
+
+\section{Review Protocol}
+
+% \subsection{PICOC and Synonyms}
+%----------------------------------------------------------------------------------------
+\input{sections/rt/chapter2/picoc.tex}
+%----------------------------------------------------------------------------------------
+
+
+% \subsection{Research Questions}
+%----------------------------------------------------------------------------------------
+\input{sections/rt/researchq}
+%----------------------------------------------------------------------------------------
+
+% \subsection{Key Terms and Search Strategy}
+%----------------------------------------------------------------------------------------
+\input{sections/rt/chapter2/searchkey.tex}
+%----------------------------------------------------------------------------------------
+
+% \subsection{Digital Library}
+%----------------------------------------------------------------------------------------
+\input{sections/rt/chapter2/databases.tex}
+%----------------------------------------------------------------------------------------
+
+% \subsection{Inclusion and Exclusion Critera}
+%----------------------------------------------------------------------------------------
+\input{sections/rt/chapter2/incexc.tex}
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+\input{sections/rt/chapter2/quality.tex}
+%----------------------------------------------------------------------------------------
+
+% \subsection{Defining Data Extraction Form}
+%----------------------------------------------------------------------------------------
+\input{sections/rt/chapter2/dataform.tex}
+%----------------------------------------------------------------------------------------
+
+
+\section{Conducting Review}
+In total, 523 articles have been retrieved from online digital databases -- ScienceDirect, SpringerLink, Scopus, IEEExplore, ACM and WebofScience-- that are well known for publishing research studies related to computer science. 
+For all databases, we limit the search result based on the following criteria we defin in section \ref{sec:inc-exc}. Only papers from computer science subject areas are selected. In addition, only document-type articles and papers from journals and conferences of source type are included into the final search result. For each selected database, we employ different search queries and search strategies.
+
+% \subsection{Search Queries and Search Strategy}
+%----------------------------------------------------------------------------------------
+\input{sections/rt/chapter2/cr_strategy.tex}
+%----------------------------------------------------------------------------------------
+
+
+% \subsection{Search Result and Bibliometric Analysis}
+%----------------------------------------------------------------------------------------
+\input{sections/rt/chapter2/cr_bibliometric.tex}
+%----------------------------------------------------------------------------------------
+
+% \subsection{Study Selection and Refinement}
+%----------------------------------------------------------------------------------------
+\input{sections/rt/chapter2/cr_refinement.tex}
+%----------------------------------------------------------------------------------------
+
+% \subsection{Data Extraction and Monitoring}
+%----------------------------------------------------------------------------------------
+\input{sections/rt/chapter2/cr_extraction.tex}
+%----------------------------------------------------------------------------------------
+
+% \subsection{Data Synthesis}
+%----------------------------------------------------------------------------------------
+\input{sections/rt/chapter2/cr_synthesis.tex}
+%----------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+
+% Todo: Method for data extraction and synthensis 
+% \subsection{Data Extraction Method}
+% \subsection{Data Synthesis Method}

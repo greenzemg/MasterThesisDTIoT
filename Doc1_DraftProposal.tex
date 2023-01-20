@@ -1,0 +1,74 @@
+\documentclass[a4paper,10pt]{scrartcl}
+\usepackage[utf8]{inputenc}
+
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc} %-- pour utiliser des accents en français, ou autres
+\usepackage{amsmath,amssymb,amsthm} 
+% \usepackage[round]{natbib}
+\usepackage{url}
+\usepackage{xspace}
+\usepackage[left=20mm,top=10mm]{geometry}
+\usepackage{algorithmic}
+\usepackage{subcaption}
+\usepackage{mathpazo}
+\usepackage{booktabs}
+\usepackage{hyperref}
+% \usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{amssymb}
+\usepackage{listings}
+\usepackage[toc,page]{appendix}
+\usepackage{geometry}
+\usepackage{minted}
+\usepackage{todonotes}
+\usepackage{svg}
+
+\usepackage[%
+    style=ieee, %apa of ieee?
+    isbn=false,
+    url=false,
+    doi=true
+]{biblatex}
+\addbibresource{references.bib}
+
+% \title{Digital Twin Based Authentication Scheme To Secure Communication With IoT Application}
+\title{Digital Twin and Securing IoT Applications}
+
+\author{Teklit Haphtu Gebremaraim \\ \url{t.h.gebremariam@student.utwente.nl}}
+\date{November 2022}
+
+\begin{document}
+
+\maketitle
+
+\input{sections/introduction.tex }
+
+\input{sections/motivation.tex}
+
+
+% \input{sections/problem-statement.tex}
+
+
+\input{sections/research-questions.tex}
+
+% \input{sections/background.tex}
+
+\input{sections/methodology.tex}
+
+\input{sections/proposed-solution.tex}
+
+% \input{sections/tools.tex}
+
+\input{sections/plan.tex}
+
+
+% \newpage
+\printbibliography
+\vspace{12pt}
+% 12. Include references and word count
+
+
+\end{document}
