@@ -1,7 +1,10 @@
 %----------------------------------------------------------------------------------------
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
-\documentclass[11pt, english, singlespacing, headsepline]{classes/ResearchTopic}
+% %----------------------------------------------------------------------------------------
+
+% singlespacing
+
+\documentclass[11pt, english, openany, singlespacing, headsepline]{classes/ResearchTopic}
 
 \usepackage[utf8]{inputenc} % Required for inputting international characters
 \usepackage[T1]{fontenc} % Output font encoding for international characters
@@ -11,13 +14,24 @@
 \newcommand{\hajj}[2][]{\todo[inline, color=green, author=elhajj, #1]{#2}}
 % \usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
 
+%style=ieee, %apa of ieee?
+% \usepackage[%
+%     backend=biber,
+%     style=numeric
+%     isbn=false,
+%     url=false,
+%     doi=true
+% ]{biblatex}
+
 \usepackage[%
-    style=ieee, %apa of ieee?
-    isbn=false,
+    backend=biber,
+    style=numeric,
     url=false,
+    isbn=flase
     doi=true
 ]{biblatex}
 \addbibresource{references.bib} % The filename of the bibliography
+\addbibresource{references-lit.bib} % The filename of the bibliography
 
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
 \usepackage{nicematrix} % For Nicetabular table
@@ -26,16 +40,18 @@
 % \usepackage{cite} 
 % for managing images and figures
 \usepackage{graphicx}
-% For alligning table caption
+% For aligning table caption
 \usepackage{caption}
 \newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1\textwidth-2\tabcolsep-1.5\arrayrulewidth}}
 \newcolumntype{Y}[1]{>{\centering\arraybackslash}p{#1\textwidth-2\tabcolsep-1.5\arrayrulewidth}}
-\usepackage{tcolorbox} % for shadwo box 
+\usepackage{tcolorbox} % for shadow box 
 \usepackage{svg} % for svg 
-\usepackage[export]{adjustbox} % to possition image and table
-\usepackage{parskip} % to disable automatic indentation and provid space between pargarphs 
+\usepackage[export]{adjustbox} % to position image and table
+\usepackage{parskip} % to disable automatic indentation and provide space between paragraphs 
 \usepackage{floatrow} % to put table label and caption above the table 
 \usepackage{threeparttable} % to put table label and caption above the table
+\usepackage{svg} % To include svg figures
+\usepackage{subcaption} % to put two images side by side
 %----------------------------------------------------------------------------------------
 %	MARGIN SETTINGS
 %----------------------------------------------------------------------------------------
@@ -55,7 +71,7 @@
 %----------------------------------------------------------------------------------------
 
 \thesistitle{Digital Twin and Securing IoT applications} % Your thesis title, this is used in the title and abstract, print it elsewhere with \ttitle
-\supervisor{Dr.Ing M.Mohammed\textsc{Elhajj}} % Your supervisor's name, this is used in the title page, print it elsewhere with \supname
+\supervisor{Dr.Ing Mohammed \textsc{El-hajj} T.M.  \textsc{ITÄPELTO}(Ph.D.)} % Your supervisor's name, this is used in the title page, print it elsewhere with \supname
 \examiner{} % Your examiner's name, this is not currently used anywhere in the template, print it elsewhere with \examname
 \degree{Master of Computer Science} % Your degree name, this is used in the title page and abstract, print it elsewhere with \degreename
 \author{Teklit \textsc{Haphtu}} % Your name, this is used in the title page and abstract, print it elsewhere with \authorname
@@ -65,7 +81,7 @@
 \keywords{Digital Twin, Internet of Things, authentication} % Keywords for your thesis, this is not currently used anywhere in the template, print it elsewhere with \keywordnames
 \university{\href{http://www.utwente.nl}{University of Twente}} % Your university's name and URL, this is used in the title page and abstract, print it elsewhere with \univname
 \department{\href{http://department.university.com}{Department of Computer Science}} % Your department's name and URL, this is used in the title page and abstract, print it elsewhere with \deptname
-\group{\href{https://www.utwente.nl/en/eemcs/scs/}{Service And Cybersecurity (SCS)}} % Your research group's name and URL, this is used in the title page, print it elsewhere with \groupname
+\group{\href{https://www.utwente.nl/en/eemcs/scs/}{SEMANTICS, CYBERSECURITY AND SERVICES (SCS)}} % Your research group's name and URL, this is used in the title page, print it elsewhere with \groupname
 \faculty{\href{https://www.utwente.nl/en/eemcs/}{EEMCS}} % Your faculty's name and URL, this is used in the title page and abstract, print it elsewhere with \facname
 
 \AtBeginDocument{
@@ -111,7 +127,7 @@
  
 \vfill
 
-\large \textit{A thesis submitted in fulfillment of the requirements\\ for the degree of \degreename}\\[0.3cm] % University requirement text
+\large \textit{A thesis submitted in fulfilment of the requirements\\ for the degree of \degreename}\\[0.3cm] % University requirement text
 \textit{in the}\\[0.4cm]
 \groupname\\\deptname\\[2cm] % Research group name and department name
 

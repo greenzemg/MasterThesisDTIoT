@@ -1,10 +1,46 @@
 % Chapter 4
+% ======================================================================================================
+% NOTES, TODOS
+% limitation 
+% ======================================================================================================
 \chapter{Discussion}
-
 \label{Chapter4} % For referencing the chapter elsewhere, use \ref{Chapter1} 
+In this literature review part of an ongoing project we conducted a systematic way of reviewing literature  on the use of DT technology in various domains to enhance security requirements. The study was conducted using Kitchenham and Charter's three-phase approach for systematic literature review. The aim was to investigate how DT is used to enhance Iot applications more specifically in industry 4.0. Besides, the concept of DT based on various contexts is explored. In addition, we explore the literature on what security scheme or mechanism is used to protect the integrity and confidentiality of data flow between DT and IoT sensor devices.
+% at giving more indications for wise design  choices, a summary of the pros and cons of the various categories of algorithms, a vision of the future evolution of these algorithms
 
-\section{Summary of review}
+A total of 523 articles were identified from online digital databases, including ScienceDirect, SpringerLink, Scopus, IEEExplore, ACM, and Web of Science. After applying inclusion and exclusion criteria and removing duplicates, 74 research papers were selected for further analysis.
+
+\section{Observation and Findings}
+As a result of a thorough review of the literature on the use of DT technology for securing IoT applications and securing digital communication between DT and IoT devices, few findings have been identified.
+
+First, we have identified the DT as an integrated platform of a virtual model for visualization and underlying enabling technology to process collected data from the operating environment using IoT sensors in order to gain insight that allow one to make the right decision. Having said that,  its true power lies in enabling technologies used within it. Technologies like machine learning and Data analytics are the core technology used with DT to provide intrusion detection and prediction. 
+
+Second, One key requirement for DT is the need for real-time, authentic data feeds from sensors. The whole purpose of the DT is to generate insights that can be used for security, optimization, and prediction. To achieve this, integration technology must operate on uncorrupted data in real time.
+
+Third, the power grid sector is one of the most prominent research areas that leverage digital twin technology. In contrast, the space sector, where DT was initially conceived, appears to have limited research contributions. Machine learning and blockchain are actively researched areas for enabling digital twin technology. In terms of security services, anomaly detection and testing are the two security services that have received the most research attention.
+
+Last, in our review of the selected papers, we have found that in digital communication between DT and sensors, the authors have not taken into account the power constraints of IoT devices, where it is not feasible to deploy traditional encryption mechanisms. With this regard, there is a lack of literature with a discussion of using lightweight encryption and authentication mechanisms and protecting data integrity and reliability for Digital Twin-based solutions. 
+
+
+
+
+\section{Future Direction}
+As the development of DT technology continues to progress, it is expected that it will become more and more accurate in replicating physical objects or processes. To achieve this, an increasing number of tiny, resource-constrained IoT sensors will need to be deployed on a massive scale to measure every aspect of the physical status being replicated. This presents an opportunity for future research in developing more efficient encryption algorithms to secure the transmission of data from these sensors to the DT hub station. Given the sensitive nature of the data being transmitted, ensuring that it is properly encrypted is critical for maintaining the security and integrity of the data feeds to the DT.
+
+AI is expected to play a crucial role in the future development of DT technology. Specifically, there are two potential areas where AI can be utilized: for performing analytics on collected data and to create AI-enabled simulation. Further, future research could explore the ways in which machine learning technology is used in conjunction with DT models. This could involve conducting a systematic literature review to better understand how machine learning has been integrated within DT technology in previous research studies.
+
+One area of research that presents a gap in the literature is the secure remote access control to the virtual counterpart of an ICS component for vendors to perform troubleshooting and testing. In the traditional real-world industry setup, vendors of ICS components have remote access control to the physical object of the industry for various reasons. However, it is not clear how this is going to be handled on the DT yet. One potential direction for research is to explore and investigate how to secure remote access can be achieved to one or more components of the DT.
+
+Finally, future research could explore the human-computer interaction (HCI) aspect of DT technology. This could involve examining the ways in which users interact with DT models and exploring new and innovative ways to improve the user experience. By improving the HCI aspect of DT technology, it may be possible to enhance the accuracy and reliability of the models by ensuring human error is minimized.
+
 \section{Limitations}
-% Elgibility and quality assessment are the key to make the review fair even for one person. 
-This systematic literature review is conducted by one person. However, we try to make the review protocol fair even when it is done by one person. 
+
+One limitation of this study is that only papers with "[Dd]igital [Tt]win[s]?" in their title were selected for review. While the authors argue that Digital Twin-focused research will likely use the term in the title, it is not always the case. Additionally, only one person was involved in the paper selection process, which may have resulted in some subjectivity.
+
 \section{Conclusion}
+Overall, the finding of this systematic literature review suggests that DT technology is evolving to become crucial technology, particularly in smart industries, such as the power grid, automotive industry, water treatment plants, transportation systems, and satellite internet, for providing real-time cybersecurity insights and for use as an emulation environment for threat detection and response, vulnerability assessment, security awareness training, and threat intelligence without disrupting actual industry operations. 
+
+Machine learning and data analytics are the two primary technologies widely used by study authors to enable digital twin security features. By analyzing large amounts of data generated by digital twins, machine learning algorithms can detect anomalies and identify potential security threats. Data analytics can also be used to identify vulnerabilities in digital twin systems and to optimize security configurations.  
+- While digital twin technology provides many advantages, it also poses several security challenges. Even worse, most authors neglect the security concerns related to the data used by digital twins during transmission and while at rest. Offcourse it is challenging to secure the data used by digital twins, especially in device-constrained environments. Encryption methods such as AES and RSA can provide a level of security for digital twin data. However, these methods may not be feasible for deployment in devices with limited processing power and memory.  
+
+To address the security related issues of DT deployment, some researchers have proposed using blockchain technology to maintain the integrity and reliability of data when it is shared by a network of digital twins. Others suggested to use the tradition cryptographic mechanisims like RSA and AES to secure a data communication channel between data source the DT station hub. 

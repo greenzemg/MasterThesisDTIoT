@@ -1,0 +1,94 @@
+% ======================================================================================================
+% NOTES, TODOS
+% intrusion detection 
+%     in security operation center, anomaly detection, 
+% Saftey
+% ICS security
+% Security testing and validation
+% Training and cyber range
+% Modeling
+% Simulation
+% Threat Intelligence
+% Asset management
+% patch management
+%     secure software updates 
+% Risk management.
+
+% ======================================================================================================
+%
+\subsection{Use Case of Digital Twin in Industry 4.0}
+
+\subsubsection{Threat detection and response}
+The use of digital twins as a tool for anomaly detection is the more widely used application of DT than other use cases of DT across various domains, including industrial control systems(ICS), smart grid, and cyber-physical systems(CPS). It can be used for detecting of abnormal process events \cite{xuGametheoreticApproachSecure2020} or deliberately injected malicious content \cite{saadImplementationIoTBasedDigital2020} in real-time \cite{vargheseDigitalTwinbasedIntrusion2022}. By continuously monitoring the virtual representation of the system, digital twin can also be equipped with tooling for prompt intervention and resolution of issues \cite{akbarianSecurityFrameworkDigital2021}. Intrusion or anomaly detection enabled digital twin can be used in preventing security breaches such as Network intrusion, DDoS attack, Botnet infection and son on. 
+
+William et.al \cite{danilczykSmartGridAnomaly2021} demonstrates how DT-based deep learning convolutional neural network (CNN) module can be used to detect and locate power system faults by incorporating it into their previous proposed Digital Twin framework called ANGEL\cite{williamdanilczykANGELIntelligentDigital2019} that was only used as a visualization tool. In this work, the architecture of the deep learning algorithm was tested on IEEE 9 and 39 bus power systems(standard test models used in power system analysis and research), which showed successful results in detecting and classifying faulty buses. in the paper by Xu et al.\cite{xuGametheoreticApproachSecure2020}, the authors propose a solution to the problem of stealthy estimation attacks on Cyber-Physical Systems (CPSs) by integrating a chi-square detector--a statistical method used to detect differences or deviations between observed data and expected data -- into the digital twin of the CPS. The chi-square detector monitors the system's behavior and raises an alarm if an unusual deviation is detected. Further, the authors apply the Signaling Game with Evidence (SGE) method to determine optimal attack and defense strategies. 
+
+In \cite{chukkapalliCyberPhysicalSystemSecurity2021}, Chukkapali et.al proposes a security surveillance framework for detecting deviations in the CPS ecosystem of smart farms. The framework incorporates an anomaly detection model supported by digital twins. In work done by Varghese et.al.\cite{vargheseDigitalTwinbasedIntrusion2022} use a more advanced machine learning model and a stacked ensemble classifier as a real-time intrusion detection system in CPS. it is based on the offline evaluation of eight supervised machine learning algorithms and has been shown to be superior in terms of accuracy and F1 Score, effectively detecting intrusions in close to real-time (0.1 seconds). Different from the previous two papers, Salim et.al \cite{salimBlockchainEnabledSecureDigital2022}shows the integration of Digital Twin with Blockchain can be used for botnet detection. In this work, the authors address a growing concern of botnets in industry 4.0 by proposing a blockchain-enabled digital twin that can detect botnet spread at an early stage. The digital twin employs certificate revocation to impede the spread of botnets.  
+
+ Saad et.al.\cite{saadImplementationIoTBasedDigital2020} presents an IoT-based digital twin platform aimed at enhancing the resiliency of cyber-physical networked microgrids against cyber attacks. The platform provides centralized oversight and the ability to detect false data injection, denial of service, and coordinated attacks, with corrective action based on what-if scenarios.  
+ 
+ Lopez et.al\cite{lopezDIGITALTWINSINTELLIGENT2021} explores the use of digital twin in real-time to anticipate faults and detect security issues in CPS. The digital twin has the ability to update access control policies, thus mitigating an attack or fault.  
+ 
+ Another approach, proposed by Hussaini et.al \cite{hussainiTaxonomySecurityDefense2022} discusses the importance of intrusion detection techniques in improving the security aspect of CPS. The author suggest the use of advanced data analytics techniques to detect intrusions.  
+ 
+ Akbarian et.al.\cite{akbarianSecurityFrameworkDigital2021} employs a digital twin-based security framework for ICS with attack detection and mitigation components. The framework features a digital IDS and a mitigation method to preserve system stability during attacks. The study was evaluated through experiments on a real testbed.  
+
+In general, the authors propose using digital twins to model a system's behavior and monitor it for anomalies or deviations that may indicate an intrusion. Deep learning techniques\cite{williamdanilczykANGELIntelligentDigital2019}, data analytics techniques\cite{hussainiTaxonomySecurityDefense2022}, and machine learning algorithms\cite{williamdanilczykANGELIntelligentDigital2019, chukkapalliCyberPhysicalSystemSecurity2021, vargheseDigitalTwinbasedIntrusion2022} are commonly used to analyze the data generated by the digital twin.
+
+\subsubsection{Vulnerability assessment and validating security measures}
+% Using DT as a simulation for attack and defense 
+% risk evaluation
+% Assessment tools
+% penetration test
+
+Many researchers have also explored the use of digital twins in testing, verification, and assessment of cybersecurity issues. It involves creating a comprehensive virtual representation of a physical system, which can be used to simulate and verify its behavior in different scenarios. This approach offers numerous advantages over traditional methods of testing and verification, including reduced cost\cite{franciaDigitalTwinsIndustrial2021, jiaqiliSpaceSpiderHyper2022, shitoleRealTimeDigitalTwin2021, maillet-contozEndtoendSecurityValidation2020}, increased accuracy\cite{sugumarAssessmentMethodDetecting2019, atalayDigitalTwinsApproach2020}, and reduced disruption \cite{franciaDigitalTwinsIndustrial2021, atalayDigitalTwinsApproach2020, adrienbacueDigitalTwinsEnhanced2022} to real-world operations.  
+In this paper, we will summarize and expand on eleven different contributions from researchers in the field of digital twins for vulnerability assessment, Testing, and Verification use cases.  
+
+A contribution by Dietz et.al\cite{dietzEmployingDigitalTwins2022} explores the use of digital twins for security testing of industrial control systems (ICS). The study demonstrates how a digital twin of a programmable logic controller (PLC) can be used to detect potential threats in a simulation environment. A proof-of-concept using a pressure vessel was implemented to show the feasibility of this approach.  
+
+Atalay et.al \cite{atalayDigitalTwinsApproach2020} proposed a digital twins-based approach for accurately modeling the functioning of a real-world power grid while avoiding service disruptions caused by running tests on it. This paper aimed also to fill the security evaluation standard gap in the smart grid sector and includes elements such as virtual tiers and libraries of profiles/system parameters for security evaluation. However, the authors noted the lack of validation for their proposed framework in real scenarios.  
+
+Eckhart \cite{eckhartEnhancingCyberSituational2019} proposed a cyber situational awareness framework for a comprehensive and current view of the cyber situation, including visualization and playback for deep inspection of recorded events.  
+
+Adrien Bacue et al \cite{adrienbacueDigitalTwinsEnhanced2022} conducted a case study to show how digital twins can be used for simulating attacks and designing countermeasures without affecting the internal operation of an industry.  
+
+In\cite{franciaDigitalTwinsIndustrial2021}, Francia et.al investigated the use of digital twins for ICS security testing with cost-effective, non-disruptive methods. The authors conducted an experiment to showcase the use of digital twins for ICS security testing by creating a proof-of-concept system using a bottle-filling system controlled by a PLC. They used packet generator and transmitter tools to inject network packets with various protocols into the communication channel between digital twins and their physical counterparts.  
+
+Wang et.al \cite{wangDTCPNDigitalTwin2022} presented a platform called Cyber Digital Twin based on Network Function Virtualization (NFV) for testing network security and management. As an example, they demonstrated a Distributed Denial of Service (DDoS) attack and defense mechanism using their proposed platform.  
+
+In \cite{shitoleRealTimeDigitalTwin2021} Shitole argued that the use of real-time CPS testbeds for security studies has become popular, but these testbeds have limitations such as high costs and inflexibility. In this study, the authors offered a cost-effective platform called Real-Time Digital Twin for security testing of CPS systems by creating a virtual representation of the physical system.  
+
+Jiaqi Li et.al \cite{jiaqiliSpaceSpiderHyper2022} proposed a simulation and verification platform called "Space Spider", which is a digital twin-based hyper large scientific infrastructure to simulate attacks and defenses for verification of core technologies used in space internet.  
+
+A novel approach for the integration, verification, and validation of security in devices based on the digital twin concept was introduced by Maillet et.al\cite{maillet-contozEndtoendSecurityValidation2020}. This approach involves creating a comprehensive virtual representation of a physical device, composed of black-box and white-box models at different abstraction levels. By using this approach, the cost impact of adding security to physical devices is reduced while still ensuring the security and functionality of the device.  
+
+In \cite{sugumarAssessmentMethodDetecting2019} Sugumar et.al explored the use of digital twin models for assessing the effectiveness of anomaly detectors by launching attacks like scaling and pulse. The authors claimed that their proposed solution can be used quickly and accurately when compared to other methods involving simulation or direct testing on operational testbeds. However, they did not evaluate other types of attack templates such as random or ramp attacks, which could potentially be used against critical infrastructure.  
+
+% \subsection{Network Segmentation}
+
+\subsubsection{Threat Intelligence}
+% collecting data, processing, and analytics. 
+
+One of the well-known use cases of Digital Twins is the capability of providing visualization abilities through the collection of real-time data using sensors from the physical object. The collected data can then be used for various purposes, including cyber threat intelligence. Despite the benefit of threat intelligence for security measurement, the contributions in this area are limited. In the following, we will explore three contributions that demonstrate the use of Digital Twins based on data collection, visualization, and data processing for threat intelligence.  
+In \cite{williamdanilczykANGELIntelligentDigital2019}, William Danilczyk et.al propose a framework called ANGEL to model the cyber and physical layers of a microgrid and offers real-time data visualization. It uses machine learning algorithms to allow for the simulation of multiple states concurrently, enabling the Digital Twin to make intelligent decisions based on the physical system's state.  
+
+Almeaibed's \cite{almeaibedDigitalTwinAnalysis2021} research suggests the use of analytical techniques for processing incoming data and generating reports on security and safety concerns. This is demonstrated through a case study of how hackers can manipulate radar sensor readings and potentially cause collisions.  
+
+Dietz et.al \cite{dietzHarnessingDigitalTwin2022} outline systematic steps for creating a structured threat report through digital twin security simulations. They present the process, define requirements, conduct attack simulations, and use the STIX2.1 standard and custom tools to generate Cyber Threat Intelligence (CTI) reports. The results show that shareable CTI reports can be created using digital twin security simulations.  
+\subsubsection{Security Awareness and Training}
+% Improve cybersecurity skills of employee through cyber range. 
+% DT as simulation 
+
+The integration of digital twins and cyber-ranges has proven to be an effective solution for enhancing cybersecurity skills through training and simulation. For example, vakaruk et.al \cite{vakarukDigitalTwinNetwork2021} proposed a machine learning-augmented CyberRange tool, SPIDER, to train and enhance cybersecurity skills. The tool features a DTN solution that provides an orchestration and management component within the SPIDER cyber range environment, capable of emulating various scenarios.  
+- In \cite{becueCyberFactorySecuringIndustry40with2018} Becue et.al studied the potential of using digital twins in combination with cyber ranges for cybersecurity training and simulation. The authors focused on the design of the cyber range to test the weaknesses of the digital twin by generating traffic and attacks, which allows the assessment of the impact of these attacks on the system and provides insight to support the operator in decision-making. The training offered through the cyber range focuses on building personalized cybersecurity competence through realistic scenarios.  
+
+Another integration of Digital Twin and cyber-range aimed for training and research in the field of cybersecurity proposed by Kandasamy et.al \cite{kandasamyElectricPowerDigital2022}. The study offers users the ability to simulate real-world attacks and defense techniques, as well as make changes to components or configurations with ease, making it simpler to repeat the environment for security studies on smart grids. By utilizing both tools, researchers can acquire valuable information on the potential threats posed by smart grids, leading to the development of stronger security strategies for future use. 
+
+To address the shortage of cybersecurity skills in 5G networks, Rebecchi et.al \cite{rebecchiDigitalTwin5G2022}, propose a solution through the use of an emulative approach. The authors built a realistic 5G environment through a platform composed of several interacting components, including an Emulation Scenario Editor, Knowledge Base, OSS Northbound API, and Executable Service Graphs. The goal of the platform was to provide training scenarios for ethical hackers and DevOps engineers.  
+% \subsection{Intrusion Detection}
+
+
+
+
+
+
