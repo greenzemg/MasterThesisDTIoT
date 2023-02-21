@@ -37,11 +37,21 @@
 \section{Research Topic}We are in an era where it is difficult for industries and organizations to run a business process without connectivity and data exchange. With the advent of Industry 4.0, Digital Twins(DT) and Internet of Things(IoT) are the two enabling technologies that provide unprecedented levels of connectivity and data exchange to monitor and optimize business operation. Both technologies have been around for a while, but the integration of of them is just getting started.
 
 \section{Literature Review}
-...
+% Methodology Summary 
+% The core concept of Digital Twin
+% How digital twin is used to securing IoT application 
+% How data is secure 
+This study conducted a systematic literature review to investigate the use of Digital Twin in enhancing the security of IoT applications in industry 4.0. The review followed a three-phase approach, including using automated tools for the review process. A total of 523 papers were initially collected from seven digital libraries, and after applying inclusion and exclusion criteria and quality assessment, 57 relevant papers were selected for the review. 
+
+The definition of digital twins in the literature varies depending on the context, but generally, it consists of three components: physical and digital states, interconnectivity, and a process for collecting and examining data.
+
+The use cases for digital twins are vast, including threat detection and response, vulnerability assessment, security awareness training, and threat intelligence. A wide range of industry 4.0 sectors benefit from this technology, including the power grid, automotive industry, water treatment plants, transportation systems, and satellite internet, among others. Researchers have deployed security-enabled digital twins to improve the security and safety of operations.  
+Machine learning and data analytics are the two primary technologies widely used by study authors to enable digital twin security features. Other technologies, such as blockchain, cloud computing, and federated learning, are also used. However, most authors neglect the security concerns related to the data used by digital twins during transmission and while at rest.  
+Some researchers have proposed encryption methods, such as AES and RSA, to secure digital twin data. However, these methods may not be feasible for deployment in device-constrained devices. Other researchers have suggested using blockchain to maintain the integrity and reliability of data shared by a network of digital twins.  
 
 % Niche
 \section{Niche and Scope}
-Internet of Things (IoT) is a network of physical objects, such as smart devices, sensors, actuators, vehicles and buildings powered by software and network connectivity that allow them to collect and exchange data[\textcolor{red}{ref}]. Digital Twin can be describe as software defined digital representation of physical object. It receive large set of sensor data about environment and operating condition to simulate and monitor operation in real-time[\textcolor{red}{ref}]. Simulation of an operation, visualization of product in real-time, trouble shooting remote equipment, managing assets in industry are few of the use cases amon the others[\textcolor{red}{ref}]. Together, those two technologies are transforming the way we manage resources and operations. 
+Internet of Things (IoT) is a network of physical objects, such as smart devices, sensors, actuators, vehicles, and buildings powered by software and network connectivity that allows them to collect and exchange data[\textcolor{red}{ref}]. Digital Twin can be described as software defined digital representation of physical object that receive large set of sensor data about environment and operating condition to simulate and monitor operation in real-time\cite{williamdanilczykANGELIntelligentDigital2019, danilczykSmartGridAnomaly2021}. Simulation of an operation, visualization of product in real-time, troubleshooting remote equipment, and managing assets in industry are a few of the use cases among the others. Together, those two technologies are transforming the way we manage resources and operations. 
 
 % The importance of this research
 % The challenge in story telling scenario 
@@ -51,7 +61,7 @@ Digital Twin and IoT have an important role to play in various sectors including
 \
 % Problem statement 
 \section{Problem Statement}
-As noted previously, manufacturing facilities, including critical infrastructure, are using an IoT device to collect and send sensor measurement and operating conditions to the Digital Twin station to monitor and optimize the overall operation of the business process. However, due to the storage and processing constraints that IoT devices have [ \cite{williams_survey_2022}, \cite{noauthor_lightweight_nodate}], it is challenging to adopt traditional security cryptographic mechanisms to ensure the confidentiality and integrity of the data flow between IoT and DT. If proper security measures (authentication, authorization, encryption, and so on) are not used, an attacker may be able to perform a man-in-the-middle attack with the intent of intercepting sensitive sensor data or disrupting a system by injecting his crafted faulty data[\textcolor{red}{ref}]. In recent literatures and blog of standard institutes, it is mentioned to utilize security schemes that can fit into constraint devices to address the security requirement.  
+As noted previously, manufacturing facilities, including critical infrastructure, are using an IoT device to collect and send sensor measurement and operating conditions to the Digital Twin station to monitor and optimize the overall operation of the business process. However, due to the storage and processing constraints that IoT devices have [ \cite{williams_survey_2022}, \cite{noauthor_lightweight_nodate}], it is challenging to adopt traditional security cryptographic mechanisms to ensure the confidentiality and integrity of the data flow between IoT and DT. If proper security measures (authentication, authorization, encryption, and so on) are not used, an attacker may be able to perform a man-in-the-middle attack with the intent of intercepting sensitive sensor data or disrupting a system by injecting his crafted faulty data\cite{salimBlockchainEnabledSecureDigital2022}. In recent literatures and blog of standard institutes, it is mentioned to utilize security schemes that can fit into constraint devices to address the security requirement.  
 
 % Proposed Solution and Hypothesis 
 \section{Proposed Solution}
@@ -64,7 +74,7 @@ This research has two main objectives. First, through systematic literature revi
 % More security
 % efficiency increase speed of data flow 
 % Getting a real time of data is one requirement of DT application 
-Getting real-time and authentic data from sensors is one requirement of DT application[\textcolor{red}{ref}].In this sense, implementing a lightweight authentication scheme will enhance security and increase the speed of data flow between DT and IIoT sensors. In addition, our scheme can provide remote secure access to IoT and DT.  
+Getting real-time and authentic data from sensors is one requirement of DT application \cite{yuchenziqianzhangningtangApplicationDigitalTwin2022}.In this sense, implementing a lightweight authentication scheme will enhance security and increase the speed of data flow between DT and IIoT sensors. In addition, our scheme can provide remote secure access to IoT and DT.  
 
 
 % Methodology 
@@ -72,9 +82,9 @@ Getting real-time and authentic data from sensors is one requirement of DT appli
 This study has two major part;literature review and implementation of proposed solution. For the literature review, we conducted a systematic way of reviewing previous leiteratures with the aim of synthesizing the core concept of Digital Twin and analyzing the existing solution for securing IoT application using Digital Twin. To implement our proposed solution, which is a lightweight authentication scheme, we leverage platform called Ditto and microcontroller manufactured by Pycom called ESP32. Ditto is an open source framework developed and maintained by Eclipse Foundation to facilitate the interaction between Digital Twin and IoT devices\cite{noauthor_eclipse_nodate}.ESP32 microcontroller is a chipset that can be programmed with micropython which is an implementation of Python3 for microcontroller. 
 The performance and efficiency of our proposed solution is validated, at the end of the study, by measuring the power consumption, execution time, and storage complexity. 
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{images/ps-scheme2.png}
+    \includesvg[width=\textwidth]{images/svg/ps-scheme-final.svg}
     \caption{Proposed solution schemes and experiment context}
     \label{fig:ps-scheme}
 \end{figure}
