@@ -8,14 +8,18 @@
 %
 \subsection{Exploring the Concept of Digital Twin}
 
-The concept and definition of digital twins have been subject to various interpretations by researchers and scholars, contingent upon the specific context. Nevertheless, the essential components of a digital twin can be generally characterized by 3 main components: two states(physical and digital), inter-connectivity (the channel between the two states), and process( a mechanism for collecting and examining data). In this section, we endeavor to provide a comprehensive definition of digital twins by synthesizing a definition derived from a  review of 30 research papers on the topic. The definition and respective reference are listed in Table \ref{tbl:dtconcept}
+The concept and definition of Digital Twins have been subject to various interpretations by researchers and scholars, contingent upon the specific context. Nevertheless, the essential components of a digital twin can be generally characterised by 3 main components: two states (physical and digital), interconnectivity (communication channel between the two states) and process (a mechanism for collecting and examining data). In this section, we endeavor to provide a comprehensive definition of digital twins by synthesizing a definition derived from a  review of 30 research papers on the topic.
 
-Here we give a complete definition of digital twins from a collection of various definitions of research publications: \textit{ Digital Twin is a virtual representation of a physical object or system that mirrors its real-world counterpart through real-time updates and tracking of its entire life-cycle. It is designed to model the physical characteristics and behaviors of the object using digital technology, mapping the physical operating environment to virtual space for interaction and providing valuable insights through collecting asset-centric data, analytic capabilities, and simulations. Digital twins are used for monitoring, simulating, optimizing, and predicting the state of the physical object. They have a standard structure, end-to-end connectivity, communication protocol with backward compatibility, and standard data format for communication between the twins.}
+Here, we provide a comprehensive definition of Digital Twin synthesised from a collection of various definitions of research publications:
 
-\begin{table}[H]
+\textit{ Digital Twin is a virtual representation of a physical object, process or system that mirrors its real-world counterpart through real-time updates and tracking of its entire life-cycle. It is designed to model the physical characteristics and behaviours of the object using digital technology, mapping the physical operating environment to virtual space for interaction, and providing valuable insights through collecting asset-centric data, analytic capabilities, and simulations. Digital twins are used to monitor, simulate, optimise and predict the state of a physical object. They have a standard structure, end-to-end connectivity, communication protocol with backward compatibility, and standard data format for communication between the twins.}
+
+The definition and respective reference are listed in Table \ref{tbl:dtconcept}
+\begin{table}[h]
 \scriptsize
 \centering
 \caption{\label{tbl:dtconcept} Definition of digital twin in the literature}
+\resizebox{\linewidth}{!}{
 \begin{NiceTabular}{p{10cm}|p{4cm}}
 \CodeBefore
 % \rowcolors[gray]{2}{0.8}{}[cols=1-2,restart]
@@ -25,13 +29,11 @@ Here we give a complete definition of digital twins from a collection of various
     \midrule
      Digital twins are virtual representations of industrial assets that provide valuable insights through collecting asset-centric data, analytic capabilities and simulations & \cite{dietzIntegratingDigitalTwin2020, eckhartEnhancingCyberSituational2019} \\  
      \hline
-    A virtual representation of a physical system, process, or product that is synchronized with its real-world counterpart & \cite{gehrmann_digital_2020, rebecchiDigitalTwin5G2022} \\ 
-    \hline
     It is used as a virtual representation of a physical entity, modelling its components and properties & \cite{vakarukDigitalTwinNetwork2021} \\
     \hline
     A system that continuously monitors the physical state of an environment through wide sensor arrays and compares it to simulation models to gain deeper insights into its operating condition & \cite{williamdanilczykANGELIntelligentDigital2019, xuGametheoreticApproachSecure2020, danilczykSmartGridAnomaly2021, veledarDigitalTwinsDependability2019, kumarBlockchainDeepLearning2022, hadarCyberDigitalTwin2020} \\
     \hline
-    A virtual representation of a physical system, process or product that is synchronized with its real-world counterpart & \cite{gehrmann_digital_2020, luongnguyenDigitalTwinIoT2022, lopezDIGITALTWINSINTELLIGENT2021} \\ 
+    A virtual representation of a physical system, process or product that is synchronized with its real-world counterpart & \cite{gehrmann_digital_2020, luongnguyenDigitalTwinIoT2022, lopezDIGITALTWINSINTELLIGENT2021, rebecchiDigitalTwin5G2022} \\ 
     \hline
     A technology to map the physical operating environment to virtual space for interaction. & \cite{wuDeepLearningDriven2022}  \\ 
     \hline
@@ -42,8 +44,9 @@ Here we give a complete definition of digital twins from a collection of various
     \hline
     virtual replica of physical object with standard structure, end-to-end connectivity, communication protocol with backward compatibility, and standard data format for communication between the twins & \cite{atalayDigitalTwinsApproach2020} \\
 
-    \hline
-    DT is a mapping between physical object and virtual entity that receive data in real-time to predicate the state of the physical object & \cite{dinglingsuzehuiquDetectionDDoSAttacks2022} \\
+    % \hline
+    % This paper is rejected
+    % DT is a mapping between physical object and virtual entity that receive data in real-time to predicate the state of the physical object & \cite{dinglingsuzehuiquDetectionDDoSAttacks2022} \\
     
     \hline
     A virtual Model designed to accurately map a physical object or process & \cite{wangDTCPNDigitalTwin2022, sousaELEGANTSecurityCritical2021} \\
@@ -68,4 +71,29 @@ Here we give a complete definition of digital twins from a collection of various
     
 \bottomrule
 \end{NiceTabular}
+}
 \end{table}
+
+
+The definition presented in the table  \ref{tbl:dtconcept} is interpreted using the three components(State, Connectivity, Process) as follows.  
+
+\begin{itemize}
+% Virtual replica, Model, Evolving digital profile 
+% A process, product, system, environment, industrial assest 
+    \item \textbf{State}: How the virtual and physical states of a Digital Twin are represented is dependent on the context of the research study. In most cases, the virtual state is presented as a digital(virtual) replica or model representation of a physical object, closely resembling the physical aspect. In some definitions, it is described as an evolving digital profile that captures the historical and current status of the represented object. The physical state, on the other hand, refers to the real-world object of what the Digital Twin represents. The object that is represented by the virtual state cloud be physical components, processes, systems, products, industrial assets, and environments.
+
+    \item \textbf{Connectivity}: To keep the virtual state with the physical counterpart, some form of communication channel must be established. For example, if there is a digital representation of a machine or system, it is important to keep this virtual representation in sync with the physical machine or system in order to represent it accurately. In this regard, the majority of the definition agree on the necessity of real-time data synchronisation to keep both states in fidelity.
+    
+    In some definitions, it is explicitly stated that wide sensor arrays are used to keep the data flow in sync. Another definition specifically mentions that a digital twin should have standard communication protocols and data formats to ensure backward compatibility.   
+
+ 
+    \item \textbf{Process/Capability}: Depending on the enabling technology integrated, Digital Twin has various purposes and capabilities.  In most definitions, Digital Twin is intended for simulation. One definition elaborates the simulation function as an insight gained through collecting asset-centric data. In quite a number of definitions, it is also stated that the digital twin is used for monitoring and controlling the real-world counterparts. In one definition the authors argued it can be used to increase cyber situational awareness for Cyber Critical Infrastructures
+
+
+    In conclusion, Of the three core components of Digital Twin, only the "state" is explicitly described within the definition. The intended purpose and the interconnectivity between the two states are not always included in the definition provided.
+
+
+
+    
+\end{itemize}
+

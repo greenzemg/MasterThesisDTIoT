@@ -14,22 +14,21 @@
 \newcommand{\hajj}[2][]{\todo[inline, color=green, author=elhajj, #1]{#2}}
 % \usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
 
-%style=ieee, %apa of ieee?
-% \usepackage[%
-%     backend=biber,
-%     style=numeric
-%     isbn=false,
-%     url=false,
-%     doi=true
-% ]{biblatex}
-
 \usepackage[%
     backend=biber,
-    style=numeric,
+    style=ieee, %apa of ieee?
+    isbn=false,
     url=false,
-    isbn=flase
     doi=true
 ]{biblatex}
+
+% \usepackage[%
+%     backend=biber,
+%     style=numeric,
+%     url=false,
+%     isbn=flase
+%     doi=true
+% ]{biblatex}
 \addbibresource{references.bib} % The filename of the bibliography
 \addbibresource{references-lit.bib} % The filename of the bibliography
 
@@ -42,16 +41,29 @@
 \usepackage{graphicx}
 % For aligning table caption
 \usepackage{caption}
+% \captionsetup[table]{justification=raggedright,singlelinecheck=false}
+% \captionsetup[table]{justification=raggedright,singlelinecheck=false, margin=0pt}
+% \captionsetup[table]{position=above, format=hang, justification=raggedright, singlelinecheck=false}
+% \captionsetup[table]{position=above, justification=justified, singlelinecheck=false}
+\captionsetup[table]{singlelinecheck=false, justification=raggedright, margin=0pt, labelfont=bf}
+\captionsetup[figure]{position=above, singlelinecheck=false, justification=raggedright, margin=0pt}
+
+
 \newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1\textwidth-2\tabcolsep-1.5\arrayrulewidth}}
 \newcolumntype{Y}[1]{>{\centering\arraybackslash}p{#1\textwidth-2\tabcolsep-1.5\arrayrulewidth}}
 \usepackage{tcolorbox} % for shadow box 
 \usepackage{svg} % for svg 
 \usepackage[export]{adjustbox} % to position image and table
 \usepackage{parskip} % to disable automatic indentation and provide space between paragraphs 
-\usepackage{floatrow} % to put table label and caption above the table 
+% \usepackage{floatrow} % to put table label and caption above the table 
+\usepackage{float}
 \usepackage{threeparttable} % to put table label and caption above the table
 \usepackage{svg} % To include svg figures
 \usepackage{subcaption} % to put two images side by side
+% \usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{changepage}
+\usepackage{smartdiagram}
 %----------------------------------------------------------------------------------------
 %	MARGIN SETTINGS
 %----------------------------------------------------------------------------------------
