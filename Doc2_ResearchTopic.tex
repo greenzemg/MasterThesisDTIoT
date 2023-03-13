@@ -10,7 +10,7 @@
 \usepackage[T1]{fontenc} % Output font encoding for international characters
 \usepackage{mathpazo} % Use the Palatino font by default
 \usepackage{todonotes}
-
+\usepackage{caption}
 \newcommand{\hajj}[2][]{\todo[inline, color=green, author=elhajj, #1]{#2}}
 % \usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
 
@@ -167,6 +167,8 @@
 \include{chapters/Chapter2} 
 \include{chapters/Chapter3}
 \include{chapters/chapter4} 
+\include{chapters/chapter5} 
+
 
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - APPENDICES
@@ -187,5 +189,7 @@
 
 % \printbibliography[heading=bibintoc]
 \printbibliography
+%\bibliography{sources}
+
 %----------------------------------------------------------------------------------------
 \end{document}

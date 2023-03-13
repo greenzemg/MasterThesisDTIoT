@@ -1,0 +1,85 @@
+% Chapter 5
+% ======================================================================================================
+% NOTES, TODOS
+
+% ======================================================================================================
+
+\chapter{Proposed Solution}
+\label{Chapter5} % For referencing the chapter elsewhere, use \ref{Chapter1} 
+
+\subsection{Problem Statement}
+Industry 4.0 has brought together traditional operational technology and IT systems, resulting in new attack vectors \cite{dietzUnleashingDigitalTwin2020}. Furthermore, the literature review has revealed two major challenges in Industry 4.0: speed and security. For instance, in the power automation system, the minimum acceptable time between fault detection and control being sent to the power station must be as low as 4ms \cite{rajkumar_cyber_2020} in order to ensure timely response. On the other hand, from a security perspective, computational and power limitations make it difficult for (I)IoT sensors to use traditional encryption algorithms. Due to these two reasons, it is essential to explore and develop new lightweight encryption schemes that can meet the security requirements while maintaining the necessary speed and efficiency of these systems.
+
+\subsection{Proposed Solution}
+The (Industrial) Internet of Things ((I)IoT) devices is low-power and resource-constrained, which makes them incapable of running traditional cryptographic schemes such as AES and RSA. Regardless, these devices are widely used across rnage of Industry 4.0 such as manufacturing, transportation, health, and power grids, among others, for various applications. Further, IoT sensors are an integral part of Digital Twin technology used to collect and send data over wired or wireless channels.
+
+This paper proposes efficient and lightweight cryptographic authentication schemes to enhance the security of the communication channel between the Digital Twin and its physical components, which are mostly resource-constrained IoT devices. Furthermore, we envisage that our mutual lightweight authentication scheme can provide secure access to remote IoT devices (sensors) and the Digital Twin station.
+
+\textbf{\textit{Why Lightweight encryption}}:
+Lightweight cryptography algorithms are designed to be efficient and fast, making them suitable for use in resource-constrained environments such as IIoT devices and embedded systems.
+These algorithms can be used to secure data at transit and rest in (I)IoT devices, ensuring the confidentiality, integrity, and authenticity of data. Furthermore, they are essential in applications where \textbf{real-time} data processing and \textbf{low latency} are critical requirements.
+
+The following diagrams \ref{fig:ps-scheme} show the general setting of our proposed solution. 
+
+\begin{figure}[H]
+    \label{fig:ps-scheme}
+    \caption{General Setting of Proposed Solution}
+    \centering
+    \includesvg[width=\textwidth]{images/svg/ps-scheme-final.svg}
+    
+\end{figure}
+
+
+\subsection{Research Questions}
+In this second part of the master thesis, we aim to answer the following questions 
+\begin{itemize}
+    \item \textbf{RQ3} How to ensure the security requirement of digital communication between a Digital Twin and companion physical (I)IoT device?
+    \item \textbf{RQ4} What is the performance analysis comparison of using proposed scheme and the existing solution presented(discussed) in the literature?
+\end{itemize}
+
+
+\subsection{Goal and Objectives}
+The goal of this research is to explore and develop lightweight-based authentication and encryption schemes to address the security challenges faced by (I)IoT devices. The objectives of this study are to:
+
+\begin{itemize}
+    % \item Investigate the existing lightweight encryption schemes suitable for IIoT systems and assess their feasibility
+
+    \item Design a lightweight authentication/encryption scheme that can meet the security requirements of (I)IoT devices maintaining speed and efficiency.
+
+    \item Implement mutual authentication/encryption scheme to secure a communication channel between a Digital Twin platform and a real (I)IoT device. 
+    
+    % \item Conduct performance and security analysis of the new scheme. 
+
+    \item Compare the performance of the proposed lightweight encryption scheme with one of the traditional encryption schemes
+
+\end{itemize}
+By achieving these objectives, this research aims to contribute to the development of resource-efficient security schemes for authentication (I)IoT applications in Industry 4.0.
+
+
+
+
+\subsection{Implementation Methodology}
+To address research questions three(RQ3) and four(RQ4), we will implement our proposed authentication scheme on
+an open-source Digital Twin platform called Ditto and on one of microcontrollers manufactured by
+Pycom called ESP32. The authentication scheme is based on a lightweight cryptographic algorithm
+standardized by NIST. Ditto is an open-source framework developed and maintained
+by Eclipse Foundation to facilitate the interaction between Digital Twin and IoT devices\cite{noauthor_eclipse_nodate}. We opt
+for ESP32 chipset because it can be programmed with micropython which is an implementation of
+Python3 for microcontroller. 
+
+To answer our last research question(RQ4), we will test our implementation
+using a power measuring tool to estimate the performance of the proposed schemes in terms of power
+consumption, execution time, and storage complexity. 
+
+\subsection{Plan}
+The anticipated timeline for this project is between 4 to 6 months. The first part of the project focuses on a systematic literature review to answer two research questions related to digital twins and IoT.  The next phase of the project involves developing and implementing the proposed lightweight authentication scheme and measuring performance in terms of power and speed.
+
+The action plan of the project are outlined as follow:-
+\begin{itemize}
+    \item Design lightweight authentication/encryption/scheme 
+    \item Implement the scheme 
+    \item Performance analysis of the  implemented scheme 
+    \item Implement AES or RSA authentication scheme 
+    \item Performance analysis of AES/RSA authentication scheme
+    \item Writing report
+\end{itemize}
