@@ -1,100 +1,34 @@
 % Chapter 4
 % ======================================================================================================
 % NOTES, TODOS
-% limitation 
-% Observation -> blockchain for data integrity and sharing Machine learning for intrusion detection cloud -> deploying dt in cloud 
-% Privacy preserving 
-% DT is a simulation platform 
+
 % ======================================================================================================
-\chapter{Discussion, Limitation and Conclusion}
+
+\chapter{Experiment}
 \label{Chapter4} % For referencing the chapter elsewhere, use \ref{Chapter1} 
 
-In this literature review part of an ongoing project, we conducted a systematic way of reviewing literature on the use of DT technology in various domains to enhance security requirements. The study was conducted using three-phase approach for systematic literature review that includes planning reviewing protocol, conducting review and writing report. The aim was to investigate how DT is used to enhance Iot applications more specifically in industry 4.0. In addition, we explore the literature on what security scheme or mechanism is used to protect the integrity and confidentiality of data flow between DT and (I)IoT sensor devices.
+The primary objective of this research is to demonstrate the feasibility of using lightweight encryption/authentication with new proposed  schemes to improve communication security between constrained devices and Digital Twin. To validate the efficacy of our proposed solution, we conducted experiments using an ESP32 as the constrained device candidate and a widely-used open-source digital twin platform called Ditto. This section provides a comprehensive overview of the experimental setup (see Fig \ref{fig:experiment-setup}) used in this study and detailed implementation specifications for the lightweight encryption/authentication algorithm implemented on both the constrained device and the digital twin platform.
+
+\begin{figure}[H]
+    \caption{Research Experiment Setup}
+    \centering
+    \includegraphics[width=\textwidth]{images/fp/experiment.drawio.png}
+    \label{fig:experiment-setup}
+\end{figure}
 
 
-% at giving more indications for wise design  choices, a summary of the pros and cons of the various categories of algorithms, a vision of the future evolution of these algorithms
+\input{sections/fp/Chapter7/esp32}
 
-A total of 523 articles were identified from online digital databases, such as ScienceDirect, SpringerLink, Scopus, IEEExplore, ACM, and Web of Science. After applying inclusion and exclusion criteria and removing duplicates, we left with 73 research papers from which we selected 56 papers where we perform analysis to answer our research questions.
+\input{sections/fp/Chapter7/ditto}
 
-The majority of research studies on the use of Digital Twin as a security solution were published starting in the year 2018. However, it was observed that the adoption of digital twin technology is growing in various Industry 4.0 sectors over the past 5 years. 
+\input{sections/fp/Chapter7/cascon}
 
-The contributions of the research vary from theoretical concepts to digital twin-based security platforms. The majority of the studies focus on providing a framework that can be only a theoretical concept or validated through experimental use cases. Furthermore, most of the studies lack security and performance analysis.
+\input{sections/fp/Chapter7/mqttpayload}
 
-In the following we discuss 1) the past, present and future status of Digital Twin, 2) then 
-we briefly look into how DT is used as a security tool, 3) finally, we reflect on security mechanisms for protecting data flow between DT and (I)Iot.
+\input{sections/fp/Chapter7/mapping}
 
-\section{Observation and Findings}
-As a result of a thorough review of the literature on the use of DT technology for securing (I)IoT applications and securing digital communication between DT and IoT devices, few findings have been identified.
+\input{sections/fp/Chapter7/demo}
 
+\input{sections/fp/Chapter7/performance}
 
-\subsubsection{Past, Present and Future of Digital Twin}
-In its early days, the Digital Twin concept was primarily used only as a model in the manufacturing industry. However, with the advent of enabling technologies such as (I)IoT, AI, and cloud computing, it has evolved into an integrated platform capable of providing a range of services beyond just modelling. Today, it is used in various industries to enhance the security of complex environments in addition to improving productivity and efficiency. Looking ahead, digital twins are expected to incorporate even more technologies and integrate more deeply with humans through research on Human-Computer Interaction technology.
-
-% \textbf{\textit{DT as integrated platform}}:
-From the review, we identified DT as an integrated platform of a virtual model with enabling technology to process collected data from the operating environment through (I)IoT sensors in order to gain insight for monitoring, optimisation, and prediction. However, the data where enabling technology operates should be in real-time and uncorrupted. This is one of the requirements of DT hightlight by most of authors for proper functioning of their proposed solution. 
-
-
-
-\subsubsection{Digital Twin as security tools}
-Digital Twin is being developed to be used for various purposes, including security. Our review indicates it is mostly used as a simulation platform for conducting testing and training. Next to using DT as a simulation, a number of solutions are proposed to detect anomalies \cite{sugumarAssessmentMethodDetecting2019, chukkapalliCyberPhysicalSystemSecurity2021} and intrusions in cyber-physical systems(CPS) and industrial control systems (ICS) \cite{vargheseDigitalTwinbasedIntrusion2022, akbarianIntrusionDetectionDigital2020}. In this regard, the potential threats are DDoS, botnet activities, network breaches, and anomaly processes.   
-
-
-The majority of papers discuss setting up a digital twin in a standalone environment to enhance the security of a targeted industry \cite{almeaibedDigitalTwinAnalysis2021, veledarDigitalTwinsDependability2019, chukkapalliCyberPhysicalSystemSecurity2021, adrienbacueDigitalTwinsEnhanced2022}. However, we have found a few papers that present the idea of sharing cyber threat intelligence(CTI) \cite{dietzHarnessingDigitalTwin2022, almeaibedDigitalTwinAnalysis2021} data generated using Digital Twin across industries to collectively improve security. This is a unique approach to using digital twin technology that could have a significant impact on tackling big security problems, such as ransomware through sharable CTI. However, for this to be effective, we argue that the data-sharing process must be in real-time with privacy in mind. 
-
-
-In terms of enabling technology, machine learning and data analytics are the core technology used to power up Digital Twin to function as a security-enhancing tool. In other words, detection and protection security services are realized mainly using machine learning and data analytics that operate on large data collected through sensors. 
-
-
-\subsubsection{Securing (I)IoT data}
-% \item\textbf{\textit{Lack of discussion on Lightweight encryption}}: 
-In our review of selected papers, it became evident that most of the papers place little emphasis on ensuring the authenticity and integrity of the sensor data that is fed into the Digital Twin station. Even though a handful of papers discuss securing the data transmission channel, their recommendations rely on traditional encryption and authentication mechanisms such as RSA and AES. This is concerning because in most use cases data generating sensors are power constraints where it is not feasible to deploy traditional encryption algorithms to secure them. Hence, it is essential to focus on lightweight algorithms to protect data integrity and authenticity of data used in Digital Twin-based solutions. Hence, it is important to design and develop a lightweight basec cryptographic solution to protect the data and communication channel between the DT and sensors that generate data.  
-
-
-
-
-\section{Future Direction}
-
-\textbf{\textit{Efficient lightweight encryption algorithms}}: As the development of Digital Twin technology progresses, it is expected that it will become accurate in replicating physical objects and processes. To achieve this level of accuracy, a large number of tiny, resource-constrained IoT sensors will need to be deployed on a massive scale to measure every aspect of the physical status being replicated. This presents future research directions for designing and implementing efficient encryption algorithms that can be deployed on resource-constrained devices.
-
-
-\textbf{\textit{Machine learning}}: Artificial intelligence(AI) is expected to play a crucial role in the future development of DT technology. Specifically, there are two potential areas where AI can be utilised: to perform analytics on collected data and to create AI-enabled simulations. Hence, future research could explore the ways in which machine learning technology is used in conjunction with DT models. This could involve conducting a systematic literature review to better understand how machine learning has been integrated within DT technology in previous research studies.
-
-\textbf{\textit{Remote access control for DT}}: One area of research that we have identified as a gap in the literature is the secure remote access control to the virtual counterpart of an ICS component for vendors to perform troubleshooting and testing. In the traditional real-world industry setup, vendors of ICS components have remote access control to the physical object of the industry for various reasons. However, it is not clear how this is going to be handled on the DT yet. One potential direction for research is to explore and investigate how secure remote access can be achieved to one or more components of the DT.
-
-% \textbf{\textit{DT based ransomware detection}}
-\textbf{\textit{Human computer interaction}}: Finally, future research could explore the human-computer interaction (HCI) aspect of DT technology. This could involve examining the ways in which users interact with DT models and exploring new and innovative ways to improve the user experience. By improving the HCI aspect of DT technology, it may be possible to enhance the accuracy and reliability of the models by ensuring that human error is minimised.
-
-\section{Limitations Of The Study}
-% The concept of DT definition are not complete  
-% Most study are focused on farmework 
-% 
-This study has two main categories of limitations: those related to collecting searching papers and those related to reviewing them.
-
-\textbf{\textit{Limitation related searching}}: Regarding the limitations related to collecting papers, the first issue is with the methodology used to select papers. Only papers with the exact phrase "[Dd]igital [Tt]win[s]?" in their title were chosen for review. While the authors argue that research focused on digital twins will likely use this term in the title, this is not always the case. However, this approach also had the benefit of limiting the number of papers reviewed to those specifically discussing digital twins in security, which could otherwise have been a much larger pool. 
-
-Another limitation within this category is related to the three-stage searching mechanism employed to query papers from online archives. In one of the databases, we were unable to use the methodology directly as it lacked dedicated fields for searching the "abstract" sections of papers, unlike in the other libraries. However, we attempted to retrieve all papers with "digital twin*" in their title and at least one of the terms "security," "industry," or "IoT" and manually screened them to filter out the relevant ones.
-
-\textbf{\textit{Limitation related to reviewing}}: The limitations associated with the process of reviewing papers are described as follows. First, the majority of papers fail to provide a complete and comprehensive definition of Digital Twin. Specifically, while the "state" component -- encompassing both the virtual and physical states -- is often explicitly described, the intended purpose and interconnectivity between these states are not consistently included in the definition.
-
-Another limitation within this category relates to the misunderstanding of Digital Twin with simulation software. Few papers, particularly within the healthcare sector, propose solutions utilizing simulation software under the consideration of Digital Twin. This can lead to confusion and potentially incorrect conclusions regarding the potential benefits and drawbacks of Digital Twin technology.
-
- Lastly, it has been observed that there is inconsistency in the usage of the terms Framework, Methodology, and Architecture, which are often used interchangeably without a clear understanding of their definitions and distinctions. The authors argue that this could be due to a lack of consensus on how these terms should be used to categorise the contributions of authors. This inconsistency is particularly evident in cases where different terms are used to refer to the same things within a single paper, causing further ambiguity and hindering accurate classification of the author's contributions.
-
- To address these limitations, reviewers must carefully evaluate the definitions and concepts presented within papers by considering the broader context of the research to ensure a thorough understanding of the Digital Twin concept. In addition, it is crucial for researchers to establish clear definitions and appropriate usage of terms like framework, methodology and architecture to facilitate effective communication and reliable classification of research contributions. By doing so, reviewers can enhance the quality and reliability of research within the Digital Twin field.
-
-
-\section{Conclusion}
-Overall, the finding of this systematic literature review of 56 papers suggests that DT technology is evolving to become crucial technology, particularly in smart industries, such as the power grid, automotive industry, water treatment plants, transportation systems, and satellite internet, for providing real-time cybersecurity insights through an emulation environment for threat detection and response, vulnerability assessment, security awareness training, and threat intelligence without disrupting actual industry operations. 
-
-Machine learning and data analytics are the two primary technologies that study authors widely use to enable digital twin security features. By analyzing large amounts of data generated by digital twins, machine learning algorithms can detect anomalies and identify potential security threats.
-
-Digital Twin technology provides many advantages, but it also poses several security challenges in securing the data collected and transmitted, especially by power and computationally constrained devices. Moreover, in most studies security concerns related to the data used by digital twins during transmission and at rest are neglected.
-
-Traditional Encryption methods such as AES and RSA are most commonly suggested by authors to provide a level of security for digital twin data. However, these methods are not feasible for deployment in devices with limited processing power and memory. Hence, it is required to perform further study on designing and implementing lightweight cryptographic algorithms on these devices without compromising the desired level of security. 
-
-
-% To address the security related issues of DT deployment, some researchers have proposed using blockchain technology to maintain the integrity and reliability of data when it is shared by a network of digital twins. Others suggested to use the tradition cryptographic mechanisims like RSA and AES to secure a data communication channel between data source the DT station hub. 
-
-% Discussion on security
-% XACML SAML and OAuth
-% Quantum communication channel 
+\input{sections/fp/Chapter7/securtiyanalysis}

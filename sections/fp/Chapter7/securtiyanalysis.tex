@@ -1,0 +1,6 @@
+
+\section{Security Analysis of ASCON}
+\textit{Preliminary assumption:} The proposed scheme in this paper uses the Ascon algorithm, which provides 128-bit security. As long as the security of Ascon is not broken, the proposed scheme is secure. The only information leaked to the adversary is the associated data, namely the thing ID (id). This information does not give any advantage to an attacker. The thing ID (id) is the additional data (or associated data ) in our authenticated encryption implementation. Furthermore, we assume that the private (symmetric) key employed for communication purposes is deployed before the communication starts through some sort of secure communication. 
+
+
+However, it is important to note that the application protocol used, specifically the MQTT protocol, is not encapsulated or secured using TLS or any other security protocol. As a result, all the metadata associated with the MQTT protocol is openly available to the public.

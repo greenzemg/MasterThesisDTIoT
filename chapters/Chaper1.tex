@@ -63,15 +63,17 @@ Connectivity and data exchange are two of the characteristics of Industry 4.0. I
 % IIoT application 
 % Digital Twin use case
 % 
-The (Industrial) Internet of Things is a system of interconnected physical devices, such as sensors and actuators, that are embedded in technology to allow the communication and exchange of data through wireless networks \cite{maillet-contozEndtoendSecurityValidation2020}. The adoption of Industrial Internet of Things (IIoT) in industrial settings aims to improve efficiency, productivity, and safety by gathering and analyzing data from connected devices, sensors, and machines \cite{kumarBlockchainDeepLearning2022}. However, the gap between enterprise Information Technology (IT) and Operational Technology (OT) has been a challenge in implementing (I)IoT due to different standards, protocols, and security requirements \cite{adrienbacueDigitalTwinsEnhanced2022}.
+The (Industrial) Internet of Things is a system of interconnected physical devices, such as sensors and actuators, that are embedded in technology to allow the communication and exchange of data through wireless networks \cite{maillet-contozEndtoendSecurityValidation2020}. The adoption of the Industrial Internet of Things (IIoT) in industrial settings aims to improve efficiency, productivity, and safety by gathering and analyzing data from connected devices, sensors, and machines \cite{kumarBlockchainDeepLearning2022}. However, the gap between enterprise Information Technology (IT) and Operational Technology (OT) has been a challenge in implementing (I)IoT due to different standards, protocols, and security requirements \cite{adrienbacueDigitalTwinsEnhanced2022}.
 
-Digital Twin, on the other hand, is software-defined digital representation of physical object that operate on a large set of environmental sensor data to simulate and monitor operation in real-time \cite{williamdanilczykANGELIntelligentDigital2019, danilczykSmartGridAnomaly2021}. Simulation of an operation, visualization of product in real-time, troubleshooting remote equipment \cite{alcarazDigitalTwinComprehensive2022, veledarDigitalTwinsDependability2019, vargheseDigitalTwinbasedIntrusion2022}, and managing assets in industry are a few of the use cases among the others. Together, those two technologies are transforming the way we manage resources and operations in various industry use cases.
+Digital Twin, on the other hand, is software-defined digital representation of the physical object that operates on a large set of environmental sensor data to simulate and monitor operation in real-time \cite{williamdanilczykANGELIntelligentDigital2019, danilczykSmartGridAnomaly2021}. Simulation of an operation, visualization of product in real-time, troubleshooting remote equipment \cite{alcarazDigitalTwinComprehensive2022, veledarDigitalTwinsDependability2019, vargheseDigitalTwinbasedIntrusion2022}, and managing assets in industry are a few of the use cases among the others. 
+
+Together, those two technologies are transforming the way we manage resources and operations in various industry use cases.
 
 
 % The importance of this research
-% The challenge in storytelling scenario 
+% The challenge in the storytelling scenario 
 \textbf{Importance of the Research}:
-Digital Twin and (I)IoT technologies have recently emerged to play important roles across various industries, including aerospace engineering, electric grid, car manufacturing, petroleum industry, healthcare, and more \cite{tao_digital_2018}. For these technologies to function properly in an industrial setting, authentic and un corrupted data \cite{fuller_digital_2020} in real-time is required \cite{yuchenziqianzhangningtangApplicationDigitalTwin2022}. 
+Digital Twin and (I)IoT technologies have recently emerged to play important roles across various industries, including aerospace engineering, electric grid, car manufacturing, petroleum industry, healthcare, and more \cite{tao_digital_2019}. For these technologies to function properly in an industrial setting, authentic and un corrupted data \cite{fuller_digital_2020} in real-time is required \cite{yuchenziqianzhangningtangApplicationDigitalTwin2022}. 
 
 However, in most cases, the data transmitted over wired or wireless from the source ((I)IoT) to the central processing station (DT) is vulnerable to a variety of cyber threats, such as eavesdropping, tampering, and replay attacks \cite{hussainiTaxonomySecurityDefense2022}. These attacks can result in the unauthorized access, modification, or theft of sensitive data, potentially causing significant harm to organizations that rely on these technologies.
 
@@ -82,7 +84,7 @@ Further, in industry 4.0 use cases, (I)IoT devices, such as sensors and actuator
 
 % Problem statement 
 \textbf{Problem Statement}:
-As noted previously, manufacturing facilities, including critical infrastructure, are using an (I)IoT devices to collect and send sensor measurements and operating conditions to the Digital Twin station to monitor and optimize the overall operation of the business process. However, due to the storage and processing constraints that (I)IoT devices have \cite{williams_survey_2022,noauthor_lightweight_nodate}, it is challenging to adopt traditional cryptographic security mechanisms to ensure the confidentiality and integrity of the data flow between (I)IoT and DT. If proper security measures (authentication, authorization, encryption, and so on) are not used, an attacker may be able to perform a man-in-the-middle attack with the intent of intercepting sensitive sensor data or disrupting a system by injecting crafted faulty data \cite{salimBlockchainEnabledSecureDigital2022}. In recent literatures and blog of standard institutes, it is mentioned to utilize security schemes that can fit into constraint devices to address the security requirement.  
+As noted previously, manufacturing facilities, including critical infrastructure, are using an (I)IoT devices to collect and send sensor measurements and operating conditions to the Digital Twin station to monitor and optimize the overall operation of the business process. However, due to the storage and processing constraints that (I)IoT devices have \cite{williams_survey_2022,noauthor_lightweight_nodate}, it is challenging to adopt traditional cryptographic security mechanisms to ensure the confidentiality and integrity of the data flow between (I)IoT and DT. If proper security measures (authentication, authorization, encryption, and so on) are not used, an attacker may be able to perform a man-in-the-middle attack with the intent of intercepting sensitive sensor data or disrupting a system by injecting crafted faulty data \cite{salimBlockchainEnabledSecureDigital2022}. In recent literature and blog of standard institutes, it is mentioned to utilize security schemes that can fit into constraint devices to address the security requirement.  
 
 % Proposed Solution and Hypothesis 
 \textbf{Proposed Solution}:
@@ -92,7 +94,7 @@ In this study, we propose an authentication/encryption scheme based of one of th
 
 
 \textbf{Research Objective and Aims}:
-The aim of this research is two-fold. First, conduct a systematic literature review to analyze the concept of Digital Twins and how they can enhance the security of IIoT/IoT applications in industry 4.0 use cases. Secondly, to implement a NIST standard lightweight authentication scheme to improve the security of digital communication between power, storage, and processing constraint devices and DT stations hosted on cloud or local premises.
+The aim of this research is two-fold. First, conduct a systematic literature review to analyze the concept of Digital Twins and how they can enhance the security of IIoT/IoT applications in industry 4.0 use cases. Secondly, to implement a NIST standard lightweight authentication scheme to improve the security of digital communication between power, storage, and processing constraint devices and DT stations hosted on the cloud or local premises.
 
 
 \textbf{Hypothesis}:
@@ -101,24 +103,22 @@ The aim of this research is two-fold. First, conduct a systematic literature rev
 % Getting a real-time of data is one requirement of the DT application 
 Implementing a lightweight encryption/authentication scheme based on the NIST standard can enhance the security and integrity of data flow between DT and power constraint (I)IoT sensors. This solution can reduce memory footprint, power consumption, and latency. 
 
-The proposed solution in this paper-implementing ligthweight based authentication- can facilitate the secure exchange of data between DT and IIoT sensors while preventing unauthorized access to sensitive information. The scheme utilises symmetric key cryptography, which is computationally efficient and suitable for power-constrained devices while supporting mutual authentication to verify the identities of both the DT and the IIoT sensors before exchanging data.
+The proposed solution in this paper-implementing ligthweight based authentication- can facilitate the secure exchange of data between DT and IIoT sensors while preventing unauthorized access to sensitive information. The scheme utilizes symmetric key cryptography, which is computationally efficient and suitable for power-constrained devices while supporting mutual authentication to verify the identities of both the DT and the IIoT sensors before exchanging data.
 
 
 
-The proposed scheme utilizes symmetric key cryptography, which is computationally efficient and suitable for power-constrained devices. 
 
-It supports mutual authentication to verify the identities of both the DT and the IIoT sensors before exchanging data, thus preventing unauthorized access to sensitive information.
+% It supports mutual authentication to verify the identities of both the DT and the IIoT sensors before exchanging data, thus preventing unauthorized access to sensitive information.
 
 
 
 % Methodology 
 \textbf{Methodology}:
-This study has two major parts; literature review and implementation of the proposed solution. For the literature review, we conducted a systematic way of reviewing previous literatures with the aim of synthesizing the concept of Digital Twin and analyzing how Digital Twin is used to secure IoT applications with in industry 4.0 use case. 
+This study has two major parts; a literature review to identify a gap and an implementation of the proposed solution to fill the gap. For the literature review, we conducted a systematic way of reviewing previous literature with the aim of analyzing how Digital Twin is used to securing IoT applications within Industry 4.0 use cases. 
 
-To implement our proposed solution, which is a lightweight authentication scheme, we leverage a 
-Digital Twin open-source platform called Ditto and one of ESP32 family microcontrollers from Espressif systems.As we mentioned before Ditto is an open-source software design patter, developed and maintained by Eclipse Foundation to facilitate the integration  Digital Twin and IoT devices\cite{noauthor_eclipse_nodate}. On the other hand, ESP32 popular microcontrollerchip used in IoT application. It has low power consumption, WiFi and Bluetooth connectivity and a wide range of peripheral interfaces.  
+To implement our proposed solution, which is a lightweight authentication/encryption scheme, we used a Digital Twin open-source platform called Ditto for the software part, for the hardware part we used one of ESP32 family microcontrollers from Espressif systems.As we mentioned before, Ditto is an open-source software design pattern, developed and maintained by Eclipse Foundation to facilitate the integration of Digital Twin and IoT devices\cite{noauthor_eclipse_nodate}. On the other hand, ESP32 popular microcontrollerchip used in IoT applications. It has low power consumption, WiFi and Bluetooth connectivity, and a wide range of peripheral interfaces.  
 
-In addition, the performance and efficiency of our proposed solution are compared with the traditional  method of providing encryption and authentication mechanisms by measuring the power consumption, execution time, and storage complexity. 
+After we implemented the proposed solution, the performance and efficiency of the proposed solution is compared with the traditional  method of providing encryption and authentication mechanisms in terms of power consumption, execution time, and storage complexity(memory footprint). 
 % The following diagram provides the general setting of our proposed solution.
 
 % \begin{figure}[H]

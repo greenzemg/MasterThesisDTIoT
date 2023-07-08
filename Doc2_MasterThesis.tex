@@ -21,8 +21,8 @@
     isbn=true,
     url=true,
     doi=true,
-    volume=true,
-    publisher=true,
+    % volume=true,
+    % publisher=true,
     sorting=none
 ]{biblatex}
 
@@ -45,7 +45,6 @@
 \captionsetup[table]{singlelinecheck=false, justification=raggedright, margin=0pt, labelfont=bf}
 \captionsetup[figure]{position=above, singlelinecheck=false, justification=raggedright, margin=0pt}
 
-
 \newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1\textwidth-2\tabcolsep-1.5\arrayrulewidth}}
 \newcolumntype{Y}[1]{>{\centering\arraybackslash}p{#1\textwidth-2\tabcolsep-1.5\arrayrulewidth}}
 \usepackage{tcolorbox} % for shadow box 
@@ -61,6 +60,58 @@
 \usepackage{adjustbox}
 \usepackage{changepage}
 \usepackage{smartdiagram}
+\usepackage{longtable} % to make my table spans multiple pages 
+\usepackage{changepage} % to change the offset of specific section of content 
+\usepackage{booktabs}
+
+\usepackage{pgfplots} %To add bar charts
+\pgfplotsset{width=10cm,compat=1.9}
+
+%---------------------------------------------------------------------------------------- 
+% package and configuration for include c code.
+\usepackage{xcolor}
+\usepackage{listings}
+
+\definecolor{mGreen}{rgb}{0,0.6,0}
+\definecolor{mGray}{rgb}{0.5,0.5,0.5}
+\definecolor{mPurple}{rgb}{0.58,0,0.82}
+\definecolor{backgroundColour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{CStyle}{
+    backgroundcolor=\color{backgroundColour},   
+    commentstyle=\color{mGreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{mGray},
+    stringstyle=\color{mPurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    % numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    language=C
+}
+
+%---------------------------------------------------------------------------------------- 
+--------------------------------------------------------------------------------------
+% Configuration for drawing colorful table 
+\usepackage{colortbl}
+
+\newcommand{\mc}[2]{\multicolumn{#1}{c}{#2}}
+\definecolor{Gray}{gray}{0.85}
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+
+\newcolumntype{a}{>{\columncolor{Gray}}c}
+\newcolumntype{b}{>{\columncolor{white}}c}
+
+--------------------------------------------------------------------------------------
+% 
+
 %----------------------------------------------------------------------------------------
 %	MARGIN SETTINGS
 %----------------------------------------------------------------------------------------
@@ -149,6 +200,15 @@
 \end{center}
 \end{titlepage}
 
+%----------------------------------------------------------------------------------------
+%	LIST OF CONTENTS/FIGURES/TABLES PAGES
+%----------------------------------------------------------------------------------------
+
+\tableofcontents % Prints the main table of contents
+
+\listoffigures % Prints the list of figures
+
+\listoftables % Prints the list of tables
 
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - CHAPTERS
@@ -165,6 +225,7 @@
 \include{chapters/Chapter3}
 \include{chapters/chapter4} 
 \include{chapters/chapter5} 
+
 
 
 %----------------------------------------------------------------------------------------

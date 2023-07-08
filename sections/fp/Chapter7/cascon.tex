@@ -1,0 +1,14 @@
+
+
+\section{Implementation of ASCON and AES-GCM for device}
+
+
+
+
+
+The implementation of both algorithms on the hardware IoT device was carried out using C and C++ programming languages within Arduino for esp-idf embedded development framework. We opted for C and C++ because those two choices are more suitable for low-level programming such as for embedded resource constraint devices. The main application for the IoT device was developed in C++, while the algorithm for ASCON and AES-GCM was implemented in C and incorporated through the use of the "extern" macro in C++ main application.
+
+
+The counterpart of the algorithms in the digital twin was implemented in Java. This is because the connectivity microservice of Ditto is implemented in Java. This allowed us to extend the connectivity module using Java to incorporate an extension for encryption and decryption of the payload that comes from IoT devices.
+
+It is important to note the implementation for each algorithm (ASCON\footnote{https://github.com/ascon/ascon\_collection} and AES-GCM\footnote{https://github.com/usnistgov/Lightweight-Cryptography-Benchmarking/tree/main/implementations/\_reference\_/crypto\_aead/aes-gcm/mbedtls}) was done using the reference implementation from their respective GitHub page, without introducing any optimization or modifications.

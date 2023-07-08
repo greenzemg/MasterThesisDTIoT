@@ -1,0 +1,105 @@
+% Based on the guidance obtained from previous studies on how to conduct a literature review, the authors decided to perform a systematic analysis of the existing literature. In this process, specific protocols and techniques are clearly described so that other researchers can replicate the study and get the same results. 
+
+[Todo: Include an introduction paragraph...]
+
+\section{Systematic Literature Review}
+After conducting preliminary research on how to conduct a literature review, we made the decision to perform a systematic analysis of existing literature in order to answer two out of the four research questions. Systematic Literature Review (SLR) is a formal and structured process of synthesizing existing research studies that are relevant to answer pre-defined research questions \cite{kitchenham_guidelines_2007}. Its purpose is to provide a comprehensive overview of the current state of the literature and identify research gaps \cite{carrera-rivera_how-conduct_2022}. Conducting an SLR allows researchers to gain valuable insights into a particular field or topic, and to build upon existing research by identifying areas that require further investigation.
+
+Furthermore, we adhered to the three-phase approach of conducting a systematic literature review as outlined by Kitchenham and Charter \cite{kitchenham_guidelines_2007}, which includes planning protocol, conducting a review, and reporting results. This approach ensures that the systematic literature review is conducted in a structured and transparent manner according to Kitchenham and Charter \cite{kitchenham_guidelines_2007}. Using this guideline and additional resources, we present a flow diagram of our reviewing process as depicted in Figure \ref{fig:slr-proc}. 
+
+In this study, the literature review has two main objectives. The first objective is to identify existing solutions that use DT technology to enhance the security of (I)IoT applications in Industry 4.0. The second objective is to identify the security mechanisms employed to secure the data which could be at rest or in transmission between the DT station and the data source ((I)IoT devices)
+
+
+
+\begin{figure}[H]
+    \centering
+    \caption{A flow diagram of study gathering, selection and review process.}
+    \includegraphics[width=0.9\textwidth]{images/newimages/slrmethoddiagram.drawio.png}
+    % \includesvg[width=1\textwidth]{images/svg/slrmethoddiagram.drawio.svg}
+    
+    \label{fig:slr-proc}
+\end{figure}
+
+
+To automate the systematic literature review process, from defining PICOC to data extraction, we use a web tool called\textit{parsif.al}\footnote{\href{https://parsif.al}{Parsifal} is an online tool designed to support researchers in performing systematic literature reviews in the context of software engineering. Geographically distributed researchers can work together within a shared workspace, designing the protocol and conducting the research}
+
+
+\section{Review Protocol}
+According to Kitchenham and Charter  \cite{kitchenham_guidelines_2007}, it is essential to define a review protocol that outlines the procedures and methods before beginning the review process. The protocol serves as a road map for conducting the review and ensures that the study can be replicated by providing a clear and detailed plan of the procedures to be followed \cite{carrera-rivera_how-conduct_2022}.
+
+% \subsection{PICOC and Synonyms}
+%----------------------------------------------------------------------------------------
+\input{sections/rt/chapter2/picoc.tex}
+%----------------------------------------------------------------------------------------
+
+
+% \subsection{Research Questions}
+%----------------------------------------------------------------------------------------
+\input{sections/rt/researchq}
+%----------------------------------------------------------------------------------------
+
+% \subsection{Key Terms and Search Strategy}
+%----------------------------------------------------------------------------------------
+\input{sections/rt/chapter2/searchkey.tex}
+%----------------------------------------------------------------------------------------
+
+% \subsection{Digital Library}
+%----------------------------------------------------------------------------------------
+\input{sections/rt/chapter2/databases.tex}
+%----------------------------------------------------------------------------------------
+
+% \subsection{Inclusion and Exclusion Critera}
+%----------------------------------------------------------------------------------------
+\input{sections/rt/chapter2/incexc.tex}
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+\input{sections/rt/chapter2/quality.tex}
+%----------------------------------------------------------------------------------------
+
+% \subsection{Defining Data Extraction Form}
+%----------------------------------------------------------------------------------------
+\input{sections/rt/chapter2/dataform.tex}
+%----------------------------------------------------------------------------------------
+
+
+\section{Conducting Review}
+
+In this study, a total of 523 articles were retrieved from online digital databases, namely ScienceDirect, SpringerLink, Scopus, IEEExplore, ACM, and Web of Science, which are known for publishing computer science-related research studies.
+
+For all databases, we limit the search result based on inclusion/exclusion criteria defined in section \ref{sec:inc-exc}. To recall, we included only papers published between 2016 and 2023 in the field of computer science, and document-type articles from journals and conferences were considered for the final search result.
+
+Furthermore, different search queries and strategies were used for each selected database, as they have different search mechanisms. 
+
+% \subsection{Search Queries and Search Strategy}
+%----------------------------------------------------------------------------------------
+\input{sections/rt/chapter2/cr_strategy.tex}
+%----------------------------------------------------------------------------------------
+
+
+% \subsection{Search Result and Bibliometric Analysis}
+%----------------------------------------------------------------------------------------
+\input{sections/rt/chapter2/cr_bibliometric.tex}
+%----------------------------------------------------------------------------------------
+
+% \subsection{Study Selection and Refinement}
+%----------------------------------------------------------------------------------------
+\input{sections/rt/chapter2/cr_refinement.tex}
+%----------------------------------------------------------------------------------------
+
+% \subsection{Data Extraction and Monitoring}
+%----------------------------------------------------------------------------------------
+\input{sections/rt/chapter2/cr_extraction.tex}
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+% Todo: Method for data extraction and synthesis 
+\input{sections/rt/chapter2/dataform}
+
+% \subsection{Data Synthesis}
+%----------------------------------------------------------------------------------------
+\input{sections/rt/chapter2/cr_synthesis.tex}
+
+% \subsection{Data Synthesis Method}

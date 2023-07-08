@@ -3,34 +3,59 @@
 %
 % ======================================================================================================
 %
-\section{RQ1: How Digital Twin is used to secure the (I)IoT application in Industry 4.0}
+\subsection*{RQ1: \textit{ How Digital Twin is used to secure the (I)IoT application in Industry 4.0}}
 
-The integration of operational technology and IT systems in Industry 4.0 increases the risk of cyber attacks, yet technologies like DT offer opportunities to improve security\cite{dietzHarnessingDigitalTwin2022}. In fact, the literature review also suggests that DT can be applied to enhance security in (I)IoT applications across multiple domains. The table \ref{tbl:lit-bench} summarizes some of the research that uses Digital Twin to improve the security of (I)IoT applications in various domains. The research papers were classified and analysed based on several criteria, including the target sector (use case), the purpose of DT, the enabling technology (integrated with DT), the contribution (category of methodology), and the type of study (characteristics of the study). The table demonstrates the wide range of sectors in which Digital Twins can be applied to improve security in industries including satellite, energy, power grid, intelligent transport systems, water, agriculture, the automotive industry, and manufacturing.
+Though, the integration of operational technology and IT systems in Industry 4.0 increases the risk of cyber attacks, technologies like DT offer opportunities to improve security \cite{dietzHarnessingDigitalTwin2022}. In fact, the literature review also suggests that DT can be applied to enhance security in (I)IoT applications across multiple domains. Table \ref{tbl:lit-bench} summarizes some of the research contributions that show the use of Digital Twin to improve the security of (I)IoT applications in various domains. 
 
-The Enabling technologies used in the studies include big data,  AI(machine learning), cloud computing and data analytics, edge computing, blockchain, and NFV, among others. These technologies enable researchers to build DT-based systems to improve security for various use cases.
+The research papers were classified and analysed based on several criteria, including the target sector (use case), the purpose of DT, the enabling technology used (integrated with DT), the contribution (category of methodology), and the type of study (characteristics of the study). The table demonstrates the wide range of sectors in which Digital Twins can be applied to improve security in industries including satellite, energy, power grid, intelligent transport systems, water, agriculture, the automotive industry, and manufacturing.
 
-The contributions of the studies have been classified as frameworks, platforms, algorithms, and architectures. We classify a contribution as a platform if the research presents a tool that can be deployed and used to provide security services like intrusion detection. If the authors provide only a high-level overview of the proposed solution, we classify it as an architecture. On the other hand, if details are presented for each component of the architecture, we classify it as a framework.
+The Enabling technologies used in the studies include big data,  AI(machine learning), cloud computing and data analytics, edge computing, blockchain, and NFV, among others. These technologies enable researchers to build DT-based systems equipped with security features for various use cases.
 
-Regarding the study types, Table \ref{tbl:lit-bench} shows that there are theoretical studies, case-based and experimental-based studies, and review-type studies. The theoretical studies tend to focus on proposing conceptual frameworks and architectures, while the case-based studies and experimental studies tend to evaluate the proposed frameworks and algorithms. 
+The contributions of the studies were identified as frameworks, platforms, and architectures. We classify a contribution as a platform if the research presents a tool that can be deployed and used to provide security services like intrusion detection. If the authors provide only a high-level overview of the proposed solution, we classify it as an architecture. On the other hand, if details are presented for each component of the architecture, we classify it as a framework.
+
+Regarding the study types, Table \ref{tbl:lit-bench} shows that there are theoretical studies, case-based and experimental-based studies, and review-type studies. Theoretical studies tend to focus on proposing conceptual frameworks and architectures, while the case-based studies and experimental studies tend to evaluate the proposed frameworks and algorithms through an experiment and proof of concept. 
 
 
 % \begin{adjustwidth}{-0.5in}{}
 % \begin{minipage}{\textwidth}
 
-\begin{table}[H]
-\tiny
-\centering
-\caption{\label{tbl:lit-bench} Overview of References by Use Case, Purpose of Digital Twin, Enabling Technology, Contribution Category, and Study Type.}
-% \resizebox{\linewidth}{!}{
-\begin{NiceTabular}{p{0.5cm}|p{3cm}|p{2.5cm}|p{2cm}|p{3cm}|p{1.5cm}}
-\CodeBefore
-% \rowcolors[gray]{2}{0.8}{}[cols=1-2,restart]
-\Body
-\toprule
-    \textbf{Ref}  & \textbf{Use Case}& \textbf{Purpose} & \textbf{Enabling Technology }  & \textbf{Contribution Category} & \textbf{Study type} \\
-    \midrule
+% \begin{table}[H]
+% % \tiny
+% \centering
+% \caption{\label{tbl:lit-bench} Overview of References by Use Case, Purpose of Digital Twin, Enabling Technology, Contribution Category, and Study Type.}
+% % \resizebox{\linewidth}{!}{
+% \renewcommand{\arraystretch}{2.0} % Increase the row height by a factor of 1.5
+% \begin{NiceTabular}{p{0.5cm}p{3cm}p{2.5cm}p{2cm}p{3cm}p{1.5cm}}
+% \CodeBefore
+% % \rowcolors[gray]{2}{0.8}{}[cols=1-2,restart]
+% \Body
+% \toprule
+%     \textbf{Ref}  & \textbf{Use Case}& \textbf{Purpose} & \textbf{Enabling Technology }  & \textbf{Contribution Category} & \textbf{Study type} \\
+%     \midrule
 
-    \cite{jiaqiliSpaceSpiderHyper2022} & Satellite & Simulation & Bigdata and AI & Platform & - \\
+   
+    
+% \bottomrule
+% \end{NiceTabular}
+% % }
+% \end{table}
+
+% \begin{center}
+% \begin{figure}
+% \begin{adjustwidth}{-5cm}{3cm} % Set the left margin to 2cm
+\hspace*{-4.5cm}
+\begin{longtable}{>{\small}p{0.5cm}p{2cm}p{2.9cm}p{3.0cm}p{3.0cm}p{2.0cm}}
+    \caption{\label{tbl:lit-bench} Overview of References by Use Case, Purpose of Digital Twin, Enabling Technology, Contribution Category, and Study Type.} \\
+    \hline
+    \textbf{Ref}  & \textbf{Use Case}& \textbf{Purpose} & \textbf{Enabling Technology }  & \textbf{Contribution Category} & \textbf{Study type} \\
+    \hline
+    \endfirsthead
+    \caption{\label{tbl:lit-bench} Overview of References by Use Case, Purpose of Digital Twin, Enabling Technology, Contribution Category, and Study Type. (Continued)} \\
+    \hline
+    \textbf{Ref}  & \textbf{Use Case}& \textbf{Purpose} & \textbf{Enabling Technology }  & \textbf{Contribution Category} & \textbf{Study type} \\
+    \hline
+    \endhead
+     \cite{jiaqiliSpaceSpiderHyper2022} & Satellite & Simulation & Big Data and AI & Platform & - \\
     \hline
      
      \cite{danilczykSmartGridAnomaly2021} & Smart grid & Anomaly detection & Machine Learning & Architecture & Experiment \\
@@ -65,7 +90,8 @@ Regarding the study types, Table \ref{tbl:lit-bench} shows that there are theore
 
     \cite{xuEfficientAuthenticationVehicular2021} & Automotive Industry & - & - & Framework and Algorithm & Theoretical \\
     \hline
-
+   \cite{bittonDerivingCostEffectiveDigital2018a} & ICS & Testing & - & Framework & Experiment \\
+   \hline
    \cite{glenandbensonjamesandguptamaanakandsandhuravicatheyEdgeCentricSecure2021} & Intelligent Transportation & Access Control & Edge Computing & Architecture & Case-study \\
    \hline
 
@@ -101,8 +127,8 @@ Regarding the study types, Table \ref{tbl:lit-bench} shows that there are theore
 
     \cite{almeaibedDigitalTwinAnalysis2021} & Automotive Industry & - & Analytics & Framework & Case-study \\
     \hline
-
-    \cite{becueCyberFactorySecuringIndustry40with2018} & Manufacturing sector & Simulation for Testing and Training & - & - & Theoretical \\ 
+    
+    \cite{becueCyberFactorySecuringIndustry40with2018} & Manufacturing & Simulation Testing/Training & - & Theoretical \\ 
     \hline
 
     \cite{wuDeepLearningDriven2022} & CPS of Drones & Simulation & AI - Deep Learning & Model & Experiment \\
@@ -120,8 +146,8 @@ Regarding the study types, Table \ref{tbl:lit-bench} shows that there are theore
     \cite{kumarBlockchainDeepLearning2022} & IIoT Network & Simulation, Intrusion Detection & Blockchain, Deep Learning & Framework & Experiment \\
     \hline
 
-    \cite{sugumarAssessmentMethodDetecting2019} & Water Treatment Plant & Assessment , Simulation & - & Model & - \\
-    \hline
+    % \cite{sugumarAssessmentMethodDetecting2019} & Water Treatment Plant & Assessment , Simulation & - & Model & - \\
+    % \hline
 
     \cite{williamdanilczykANGELIntelligentDigital2019} & Smart Grid & Data Visualization & - & Framework & Experiment \\
     \hline
@@ -132,14 +158,14 @@ Regarding the study types, Table \ref{tbl:lit-bench} shows that there are theore
     \cite{kandasamyElectricPowerDigital2022} & Smart Grid & Training & - & Platform & Case-study \\
     \hline
 
-    \cite{hussainiTaxonomySecurityDefense2022} & Smart Industries & Simulation and Intrusion Detection & Architecture & Case-study \\
-    \hline
+    % \cite{hussainiTaxonomySecurityDefense2022} & Smart Industries & Simulation and Intrusion Detection & Architecture & Case-study \\
+    % \hline
 
     \cite{akbarianSecurityFrameworkDigital2021} & ICS & Intrusion Detection & Cloud Computing & Framework, Algorithm & Experiment \\
     \hline
 
-    \cite{xuGametheoreticApproachSecure2020} & CPS & Fault detection, Monitoring & - & Framework & Experiment \\
-    \hline
+    % \cite{xuGametheoreticApproachSecure2020} & CPS & Fault detection, Monitoring & - & Framework & Experiment \\
+    % \hline
 
     \cite{atalayDigitalTwinsApproach2020} & Smart Grid & Testing & - & Framework & Theoretical \\
     \hline
@@ -147,8 +173,8 @@ Regarding the study types, Table \ref{tbl:lit-bench} shows that there are theore
     \cite{houDigitalTwinRuntime2022} & Satellites and Space & Penetration Testing & - & Framework and Algorithm & Theoretical \\
     \hline
 
-    \cite{vakarukDigitalTwinNetwork2021} & Telecom & Training & Machine Learning & Platform & Theoretical \\
-    \hline
+    % \cite{vakarukDigitalTwinNetwork2021} & Telecom & Training & Machine Learning & Platform & Theoretical \\
+    % \hline
 
     \cite{rebecchiDigitalTwin5G2022} & 5G Network & Simulation - Training and Testing & Machine learning & Architecture & Experiment \\
     \hline
@@ -161,22 +187,44 @@ Regarding the study types, Table \ref{tbl:lit-bench} shows that there are theore
 
     \cite{alessandradebenedictischristiancarmineespositoalessandrasommaAdoptionSecureCyber2022} & CPS & Anomaly detection & - & Framework & Theoretical \\
     \hline
-
-    \cite{olivares-rojasCybersecuritySmartGrid2022} & Power grid & Testing & - & Framework & Theoretical \\
+    
+    \cite{vielberth2021digital} & CPS & Training & - & Platform & Experiment \\
     \hline
+    % \cite{olivares-rojasCybersecuritySmartGrid2022} & Power grid & Testing & - & Framework & Theoretical \\
+    % \hline
 
     \cite{suhailSituationalAwareCyberphysical2022} & Automotive industry & Testing & Blockchain & Framework & Use-case \\
     \hline
+    
+    \cite{harrisonCybersecurityThreatModeling2022a} &  Automotive & Threat Modeling, Testing & - & - & - \\
+    \hline
 
+    \cite{aryaDetectionMaliciousNode2023a} &  Transportation & Detection & Machine learning & Framework & - \\
+    \hline
+    
+    \cite{wangDigitalTwinNetwork2022a} &  5G Network & Detection & - & Framework & - \\
+    \hline
+
+    \cite{xuDigitalTwinbasedAnomaly2023a} &  CPS & Anomaly Detection & Machine Learning & Framework & Case Study \\
+    \hline
     \cite{dietzUnleashingDigitalTwin2020} &  ICS & Simulation, Testing & - & - & - \\
     \hline
-\bottomrule
-\end{NiceTabular}
-% }
-\end{table}
+    % ... more rows ...
+    \cite{epiphaniouDigitalTwinsCyber2023a} & CPS/IoT & Security Assessment & AI and Modeling and Simulation Tools & - & Experiment through Proof of Concept \\
+    \hline
+    \cite{ayyalusamyHybridDigitalTwin2022a} & Smart Power Grid & Simulation/ Emulation & MATLAB-SIMULINK, Node-RED & Architecture & Experiment through test-bed\\
+    \hline
+    \cite{sunResearchSecurityManagement2021a} & Power Grid & Security Management & Edge Computing & Architecture & Theoretical\\
+    \hline
 
-
-
+    
+    \cite{vanderwalSecuringNetworksIoT2022a} & IoT & Vulnerability Assessment & Automated Adversary Emulation \textit{(Caldera)} & Architecture & Experiment\\
+    \hline
+    
+\end{longtable}
+% \end{adjustwidth}
+% \end{figure}
+% \end{center}
 % \input{sections/rt/chapter3/dtconcept.tex}
 
 \input{sections/rt/chapter3/sector.tex}
@@ -184,3 +232,71 @@ Regarding the study types, Table \ref{tbl:lit-bench} shows that there are theore
 % \input{sections/rt/chapter3/dtenabling2.tex}
 
 % \input{sections/rt/chapter3/dtusecase.tex}
+
+\subsubsection{Statistical Analysis}
+% We provide estimation for distribution of reference points based on percent
+% Blockchain is mostly used to provide some sort of security and privacy for data sharing and exchange in digital twin ecosystem. However, for one scenario which is detection, blockchain is leverage to provide detection.
+% Machine learning mostly used in power grid for anomaly and intrusion detection 
+% cloud computing is the enabling technology that we have observed in various sectors and for different kind of purpose including detectin, access control, testing, security management. 
+% Testing includes performing vulnerability assessment and penetration testing. It is the most widly used of Digital Twin. This is becuase Digital Twin is grete for performing testing without distribution the ongoing operation of business. 
+
+% How we make the analysis for sector 
+% we include 
+
+
+% predictive analytics, security management are not included for the analysis 
+
+As part of a systematic literature review, this analysis focuses on the use of Digital Twin technology in Industry 4.0. We explore the enabling technologies used, the adoption of Digital Twin across different sectors, and the security services provided by Digital Twin. By examining these aspects, this analysis aims to provide valuable insight into the current landscape of Digital Twin in terms of key technologies used, industry sectors targeted, and security functionalities associated with this technology. 
+
+
+Fig \ref{fig:sector} (A) provides insights into the adoption of digital twins based on their use cases or targeted industry sectors. The data are the result of data extraction from the reviewed papers. The CPS/ICS (Cyber-Physical Systems/Industrial Control Systems) sector emerges as the main area for digital twin adoption. It is worth noting that, CPS/ICs is an umbrella term that includes other specific industries like smart cities, oil and gas, etc. When it comes to specific industries, the power grid sector stands out as the most extensively researched area for the deployment of digital twins. It is observed that Digital Twin technology is primarily utilized in this sector to enable anomaly detection. However, it is worth noting that other services such as vulnerability assessment, access control, simulation, security management, and situational awareness have also been explored. The automotive and intelligent transport sectors also widely adopted Digital Twin to protect and secure vehicles, transportation systems, and traffic management. Other sectors, such as 5G network, aerospace, agriculture, satellite, enterprise network, and water, show smaller but notable percentages, reflecting the diverse range of industries using Digital Twin technology. 
+
+\begin{figure}[H]    
+    \caption{Use Case of Digital Twin}
+        \includegraphics[width=0.8\textwidth]{images/rt/sector-dist.png}
+        % \includesvg[width=\textwidth]{images/svg/itemtype.svg}
+    \label{fig:sector}
+\end{figure}
+
+
+% \begin{tikzpicture}
+% \begin{axis}[
+% 	x tick label style={
+% 		/pgf/number format/1000 sep=},
+% 	ylabel=Year,
+% 	enlargelimits=0.05,
+% 	legend style={at={(0.5,-0.1)},
+% 	anchor=north,legend columns=-1},
+% 	ybar interval=0.7,
+% ]
+% \addplot 
+% 	coordinates {(2012,408184) (2011,408348)
+% 		 (2010,414870) (2009,412156)};
+% \addplot 
+% 	coordinates {(2012,388950) (2011,393007) 
+% 		(2010,398449) (2009,395972)};
+% \legend{Men,Women}
+% \end{axis}
+% \end{tikzpicture}
+
+
+
+Fig \ref{fig:use} (B) focuses on security services provided by Digital Twin technology within various industries. Testing, which encompasses activities such as vulnerability assessment and penetration testing, emerges as the most widely adopted practice. This is attributed to the inherent capability of digital twins to facilitate rigorous testing procedures without disrupting the ongoing operations of a business.  Anomaly and Intrusion detection is the next most prominent security service provided. Specifically, in the power grid and smart grid sector, it is the primary motivation behind the deployment of the Digital Twin.
+
+% \begin{figure}[H]    
+%     \caption{Distribution of Security Service Provided By DT.}
+%     \centring
+%         \includegraphics[width=0.8\textwidth]{images/rt/purpose-dis.png}
+%     \label{fig:use}
+% \end{figure}
+
+Fig \ref{fig:enab} (C) shows the distribution of enabling technologies used or implemented with digital twin technology to provide various functionalities and services. Among the enabling technologies, machine learning (ML) emerges as the most dominant Digital Twin functionality augmenter. Different ML algorithms and models were proposed in the literature to equip Digital Twin with the capability of data analysis, predictive insight, anomaly, and intrusion detection. Cloud computing along with edge computing plays a key role in supporting the storage, and processing of large amounts of data. Additionally, blockchain technology is studied along with Digital Twin for the potential in enhancing data security and privacy.
+
+
+\begin{figure}[H]    
+    \caption{Major Enabling Technology Used With DT.}
+    \centring
+    \includegraphics[width=0.8\textwidth]{images/rt/enabling-distribution_2.png}
+    \label{fig:enable}
+\end{figure}
+
