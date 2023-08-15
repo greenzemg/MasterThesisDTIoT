@@ -1,17 +1,37 @@
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-% %----------------------------------------------------------------------------------------
 
-% singlespacing
+% \documentclass[11pt, english, openany, singlespacing, headsepline]{classes/ResearchTopic}
 
-\documentclass[11pt, english, openany, singlespacing, headsepline]{classes/ResearchTopic}
-
+\documentclass[
+11pt, % The default document font size, options: 10pt, 11pt, 12pt
+oneside, % Two side (alternating margins) for binding by default, uncomment to switch to one side
+openany, % Comment to have one blank pages before starting new chapter.
+english, % ngerman for German
+singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespacing
+%draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
+%nolistspacing, % If the document is onehalfspacing or doublespacing, uncomment this to set spacing in lists to single
+liststotoc, % Uncomment to add the list of figures/tables/etc to the table of contents
+toctotoc, % Uncomment to add the main table of contents to the table of contents
+%parskip, % Uncomment to add space between paragraphs
+%nohyperref, % Uncomment to not load the hyperref package
+headsepline, % Uncomment to get a line under the header
+%chapterinoneline, % Uncomment to place the chapter title next to the number on one line
+%consistentlayout, % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
+]{classes/ResearchTopic} 
+% -----------------------------------------------
 \usepackage[utf8]{inputenc} % Required for inputting international characters
 \usepackage[T1]{fontenc} % Output font encoding for international characters
 \usepackage{mathpazo} % Use the Palatino font by default
 \usepackage{todonotes}
 \usepackage{caption}
+% \usepackage{pdfcomment}
+% \usepackage{hyperref}
+
 \newcommand{\hajj}[2][]{\todo[inline, color=green, author=elhajj, #1]{#2}}
+\newcommand{\taru}[2][]{\todo[inline, color=lime, author=taru, #1]{#2}}
+\newcommand{\tek}[2][]{\todo[inline, color=yellow, author=teklit, #1]{#2}}
+% \newcommand{\tek1}[2][]{\pdftooltip{\todo[inline, color=yellow, author=teklit, #1]{#2}}{Click to view comment}}
+
+
 % \usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
 
 \usepackage[%
@@ -26,8 +46,8 @@
     sorting=none
 ]{biblatex}
 
-\addbibresource{references.bib} % The filename of the bibliography
 \addbibresource{final-references-lit.bib} % The filename of the bibliography
+\addbibresource{references.bib} % The filename of the bibliography
 
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
 \usepackage{nicematrix} % For Nicetabular table
@@ -61,11 +81,14 @@
 \usepackage{changepage}
 \usepackage{smartdiagram}
 \usepackage{longtable} % to make my table spans multiple pages 
-\usepackage{changepage} % to change the offset of specific section of content 
+\usepackage{changepage} % to change the offset of specific sections of content 
 \usepackage{booktabs}
 
 \usepackage{pgfplots} %To add bar charts
 \pgfplotsset{width=10cm,compat=1.9}
+
+
+\usepackage{tabularray} %To make a long table that expand multiple pages
 
 %---------------------------------------------------------------------------------------- 
 % package and configuration for include c code.
@@ -98,8 +121,8 @@
 }
 
 %---------------------------------------------------------------------------------------- 
---------------------------------------------------------------------------------------
-% Configuration for drawing colorful table 
+% --------------------------------------------------------------------------------------
+% Configuration for drawing colourful table 
 \usepackage{colortbl}
 
 \newcommand{\mc}[2]{\multicolumn{#1}{c}{#2}}
@@ -109,8 +132,14 @@
 \newcolumntype{a}{>{\columncolor{Gray}}c}
 \newcolumntype{b}{>{\columncolor{white}}c}
 
---------------------------------------------------------------------------------------
+% --------------------------------------------------------------------------------------
 % 
+
+\newcommand{\coloredcircle}[1]{\tikz[baseline=(char.base), baseline=-0.7ex]{
+    \node[shape=circle, draw, inner sep=3pt, fill=#1] (char) {};}}
+
+    % \newcommand{\coloredrectangle}[2]{\tikz[baseline=(char.base)]{
+    % \node[shape=rectangle, draw, inner sep=2pt, fill=#1, text=white] (char) {#2};}}
 
 %----------------------------------------------------------------------------------------
 %	MARGIN SETTINGS
@@ -130,7 +159,7 @@
 %	THESIS INFORMATION
 %----------------------------------------------------------------------------------------
 
-\thesistitle{Digital Twin and Securing IoT applications} % Your thesis title, this is used in the title and abstract, print it elsewhere with \ttitle
+\thesistitle{Securing Application of Digital Twin and IoT in Industry 4.0 Using Lightweight Authenticated Encrypted Payload} % Your thesis title, this is used in the title and abstract, print it elsewhere with \ttitle
 \supervisor{Dr.Ing Mohammed \textsc{El-hajj} T.M.  \textsc{ITÄPELTO}(Ph.D. Candidate )} % Your supervisor's name, this is used in the title page, print it elsewhere with \supname
 \examiner{} % Your examiner's name, this is not currently used anywhere in the template, print it elsewhere with \examname
 \degree{Master of Computer Science} % Your degree name, this is used in the title page and abstract, print it elsewhere with \degreename
@@ -150,8 +179,11 @@
 \hypersetup{pdfkeywords=\keywordnames} % Set the PDF's keywords to your keywords
 }
 
+% For debugging or making the compiling process fast
+% \includeonly{chapters/Chaper1}
 
 \begin{document}
+\emergencystretch 3em
 
 \frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
 
@@ -187,6 +219,8 @@
  
 \vfill
 
+\vspace{-4cm}
+
 \large \textit{A thesis submitted in fulfilment of the requirements\\ for the degree of \degreename}\\[0.3cm] % University requirement text
 \textit{in the}\\[0.4cm]
 \groupname\\\deptname\\[2cm] % Research group name and department name
@@ -195,10 +229,33 @@
 
 {\large \today}\\[4cm] % Date
 %\includegraphics{Logo} % University/department logo - uncomment to place it
- 
+\vspace{-8cm}
+% \includegraphics[width=0.2\linewidth]{images/logo/UT-logo.png}
+\includegraphics[width=0.5\linewidth]{images/logo/logo-no-text-big.png}
+
 \vfill
 \end{center}
 \end{titlepage}
+
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{abstract}
+\addchaptertocentry{\abstractname} % Add the abstract to the table of contents
+\textbf{\textit{Abstract--}}Connectivity and data exchange are key features of Industry 4.0. In this paradigm,  (Industrial) Internet of Things ((I)IoT) devices play a vital role in facilitating the collection and transmission of environmental data from the physical system to the central server for processing and analysis(Digital Twin). Although (I)IoT devices play a critical role in this process, they are not inherently equipped (with power, memory and computational) to run traditional encryption mechanisms like AES to secure the data they transmit over wired or wireless channels. This two-part research aims in the first part to explore the potential of Digital Twins (DT) in securing Industry 4.0 applications and the security mechanism discussed in the literature to secure the data communicated between (I)IoT and Digital Twin (DT) through a Systematic Literature Review (SLR). In the second part, we proposed a communication scheme for constrained devices based on payload authenticated encryption using a recently standardized lightweight encryption algorithm called ASCON. The result SLR revealed that Digital Twin is growing and being widely adopted as a security tool particularly in Industry 4.0 using enabling technology like machine learning, data analytics, blockchain, cloud, and 5G network to provide security solutions such as intrusion detection, vulnerability assessment, cyber range, and threat intelligence. The proposed communication scheme provides an efficient way to ensure the confidentiality, integrity, and authenticity of communicated data between constrained (I)IoT devices and cloud-hosted Digital Twin. The performance of the proposed scheme with three different implementations(without encryption, ASCON, and AES-GCM) is compared in terms of speed, memory usage and power consumption. The results show that ASCON outperforms AES-GCM in terms of speed and memory footprint.
+\end{abstract}
+
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+% \begin{acknowledgements}
+% \addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
+% The acknowledgements and the people to thank go here, \ldots
+% \end{acknowledgements}
 
 %----------------------------------------------------------------------------------------
 %	LIST OF CONTENTS/FIGURES/TABLES PAGES
@@ -209,6 +266,16 @@
 \listoffigures % Prints the list of figures
 
 \listoftables % Prints the list of tables
+
+%----------------------------------------------------------------------------------------
+%	ABBREVIATIONS
+%----------------------------------------------------------------------------------------
+
+\begin{abbreviations}{ll} % Include a list of abbreviations (a table of two columns)
+
+\input{Abbreviation/abbreviations}
+
+\end{abbreviations}
 
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - CHAPTERS
@@ -225,6 +292,7 @@
 \include{chapters/Chapter3}
 \include{chapters/chapter4} 
 \include{chapters/chapter5} 
+\include{chapters/chapter6} 
 
 
 
@@ -237,16 +305,15 @@
 % Include the appendices of the thesis as separate files from the Appendices folder
 % Uncomment the lines as you write the Appendices
 
-% \include{Appendices/AppendixA}
+\include{Appendices/AppendixA}
 %\include{Appendices/AppendixB}
 %\include{Appendices/AppendixC}
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
-
-% \printbibliography[heading=bibintoc]
-\printbibliography
+\printbibliography[heading=bibintoc]
+% \printbibliography
 %\bibliography{sources}
 
 %----------------------------------------------------------------------------------------

@@ -1,0 +1,27 @@
+
+
+\section{Implementation Approach}
+To validate the applicability and efficacy of our proposed solution (based on lightweight cryptographic algorithms), we conducted an experiment using an ESP32 -- a resource-constrained IoT device -- and Ditto -- an open-source framework for building Digital Twin \footnote{https://eclipse.dev/ditto/}. We opt for ESP32 boards for the experiment due to the fact that they are low-cost and low-power devices in the market \cite{maier_comparative_2017}. Ditto was selected for its ease of customization through Java-based plugins and its widespread use in the open-source community. 
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{images/fp/experiment.drawio.png}
+    \caption{Research Experiment Setup}
+    \label{fig:experiment-setup}
+\end{figure}
+
+This section provides a detail of the experimental setup (of Fig \ref{fig:experiment-setup}) and implementation detail of the lightweight encryption/authentication algorithm implemented on both the constrained device and the Digital Twin framework.
+
+
+
+\input{sections/chapter3/imp_ditto}
+
+\input{sections/chapter3/imp_cascon}
+
+\input{sections/chapter3/imp_mqttpayload}
+
+\input{sections/chapter3/imp_mapping}
+
+\input{sections/chapter3/imp_demo}

@@ -1,0 +1,104 @@
+% ======================================================================
+% NOTES, TODOS
+% ======================================================================
+\subsection{Search Queries and Search Strategy}
+In order to maintain a systematic approach to our search process, we took into consideration the distinct methods of advanced searching offered by different databases, each with its own unique search fields and filtering options. With this in mind, we adhered to the following protocol for conducting our search.
+ 
+Initially, we focused on locating papers that included the primary key term "Digital Twin" within their titles. Subsequently, we refined our search results by introducing security-related terms such as "authentication," "security," "encryption," and "cryptography" into the abstracts of the papers. Lastly, to further narrow down the search results, we integrated industry and IoT-related terms found within the full text of the research papers. 
+
+
+% The three-stage search mechanism described above provided a clear and adaptable procedure for conducting searches in various databases. However, a potential drawback of this mechanism is that it relies on the availability of search capabilities in the "Title," "Abstract," and "Full Text" fields of the selected databases. If these capabilities are not provided by the selected databases, the consistency and the systematic nature of the mechanism will be limited.
+
+
+\textbf{Web of Science}
+
+To search for digital twin and Internet of Things (IoT) terms within the Web of Science database, we used the "Topic" field, which includes titles, keywords, and abstracts. As for security-related terms like authentication, encryption, cryptography, and industry-related terms, we performed searches across all available fields. To refine the search results, we excluded document types such as book chapters, early access, and editorials, focusing solely on articles and conference papers. Executing the search query under the computer science category and Engineering field for all available years result in a total of 128 articles. 
+
+\begin{tcolorbox}[colback=black!5!white, sharp corners=all, colframe=white!95!black]
+\textbf{Query}
+\tcblower
+((((((TI=("digital twin*")) AND AB=(”authenticat*” OR ”cryptography” OR ”security” OR ”encrypt*”))) AND ALL=("internet of thing*" OR "industr*"  OR  "factor*"  OR  "manufactur*"  OR  "cyber physical system*"  OR  "infrastructure*" OR "smart device*")) AND LA=(English)) AND DT=(Proceedings Paper OR Article)) AND SU=(Engineering OR "Computer Science")  \\
+
+
+\textbf{Filter}: Inclusion - Document Types: Article or Proceeding Paper. Languages: English. Web of Science Categories: Engineering and Computer Science  related paper are selected.
+
+\end{tcolorbox}
+
+
+% In Web of Science, "Title" field is used to search for Digital Twin and internet of things terms. The security-related terms like authentication, encryption, cryptography, and encryption as well as terms related to industry are searched in all fields. From the search results of our query, document types such as book chapters, early access,and editorial are excluded. In other words, only document of type articles and conference papers are selected. We run the search query over all available years which are published under the category of computer science and 136 articles are returned as a result.
+
+\textbf{Scopus}
+
+Similarly, the search mechanism in Scopus is equivalent to that of the Web of Science. We used the "Article Title" field to search for articles containing the term"digital twin" in their title. This initial search yielded 3330 references after applying the exclusion criteria. The "Abstract" field is used to search papers that have terms related to security, which includes  "authentication", "encryption", "cryptography", and "security". We further refined the search by incorporating keywords related to industry and the Internet of Things and searching within the "All Fields". Only articles and conference papers were selected, and documents such as book chapters, early access, and editorials were excluded. The search was conducted over all available years in the subject area of computer science and Engineering resulting in a total of 242 articles.
+
+\begin{tcolorbox}[colback=black!5!white, sharp corners=all, colframe=white!95!black]
+\textbf{Query}
+\tcblower
+( TITLE ( "digital twin" )  AND  ABS ( "authenticat*"  OR  "cryptography"  OR  "security"  OR  "encrypt*" )  AND  ALL ( "internet of thing" OR "industr*"  OR  "factor*"  OR  "manufactur*"  OR  "cyber physical system"  OR  "infrastructure" OR "smart device") )  AND  ( LIMIT-TO ( SRCTYPE ,  "j" )  OR  LIMIT-TO ( SRCTYPE ,  "p" ) )  AND  ( LIMIT-TO ( SUBJAREA ,  "COMP" )  OR  LIMIT-TO ( SUBJAREA ,  "ENGI" ) )  AND  ( LIMIT-TO ( DOCTYPE ,  "ar" )  OR  LIMIT-TO ( DOCTYPE ,  "cp" )  OR  LIMIT-TO ( DOCTYPE ,  "re" ) )\\
+
+\textbf{Filter}: The filters are within the search query.
+\end{tcolorbox}
+
+
+\textbf{IEEExplore}
+
+We searched for "digital twin*" within the document title field. Then, we looked for security-related terms like authentication, cryptography, security, and encryption in the "Abstract" field. We then expanded our search to include industry and IoT-related terms within the "Full text and Metadata" fields. The search result in IEEExplore led to the retrieval of 121 papers, which consisted of conference and journal articles.
+
+\begin{tcolorbox}[colback=black!5!white, sharp corners=all, colframe=white!95!black]
+\textbf{Query}
+\tcblower
+("Document Title":"digital twin*") AND ("Abstract":”authenticat*” OR "Abstract":”cryptography” OR "Abstract":”security” OR "Abstract":”encrypt*”) AND ("Full Text \& Metadata":"internet of thing*" OR "Full Text \& Metadata":"industr*" OR "Full Text \& Metadata": "factor*" OR "Full Text \& Metadata": "manufactur*" OR "Full Text \& Metadata": "cyber physical system" OR "Full Text \& Metadata": "infrastructure*" OR "Full Text \& Metadata":"smart device*")  \\
+
+\textbf{Filters}: Conferences Journals and Journals filters are applied. 
+\end{tcolorbox}
+
+\textbf{ACM}
+
+Among the six databases, ACM returned the lowest number of papers (17). First, we search for papers with "digital?twin*" in the title. We further refined our search by searching for security-related terms in the abstract and industry and IoT-related terms in the "All" field. This search query results in 17 papers matching the inclusion criteria,i.e, all papers were accessible and published in English between 2018-2023
+
+\begin{tcolorbox}[colback=black!5!white, sharp corners=all, colframe=white!95!black]
+\textbf{Query}
+\tcblower
+[Title: "digital?twin*"] AND [[Abstract: "authenticat*"] OR [Abstract: "cryptography"] OR [Abstract: "security"] OR [Abstract: "encrypt*"]] AND [[All: "internet of thing*"] OR [All: "industr*"] OR [All: "factor*"] OR [All: "manufactur*"] OR [All: "cyber?physical system*"] OR [All: "infrastructure*"] OR [All: "smart device*"]]\\
+
+\textbf{Filter}: No filter is applied
+
+\end{tcolorbox}
+
+
+\textbf{ScienceDirect(Elsevier)}
+The advanced search in ScienceDirect allows a maximum of eight boolean operators. In addition, a wildcard is not supported. 
+
+The keyword 'digital twin' is searched in the 'Title' input field. while the security-related terms are searched within the 'Title, abstract or author-specified keywords' input field,  the industry and IoT related keywords are searched within the input field of 'Find articles with these terms'
+
+As a result of the above search result, we retrieved 31 papers from ScienceDirect. 
+
+\begin{tcolorbox}[colback=black!5!white, sharp corners=all, colframe=white!95!black]
+\textbf{Query}
+\tcblower
+Title: “digital twin”
+
+Title, abstract, keywords: ("authentication" OR "cryptography" OR "security" OR "encrypt")
+
+Find articles with these terms: ("internet of things" OR "industry" OR "factory" OR "manufacturing" OR "cyber physical system" OR "infrastructure" OR "smart device")
+\\
+
+\textbf{Filter}: Article of type review, research and Subject areas Engineering and computer science are selected to apply the filter.
+
+\end{tcolorbox}
+
+
+\textbf{SpringerLink}
+One notable difference between SpringerLink and other databases is the absence of a separate field for searching queries in "abstract" and "full content." This limitation inhibits to use the similar strategy we used for the other databases. 
+As a result of this limitation, we used alternative search mechanisms, briefly described in the box below.
+
+\begin{tcolorbox}[colback=black!5!white, sharp corners=all, colframe=white!95!black]
+\textbf{Query}
+General search: "digital twin*" AND ("authenticat*" OR "cryptography" OR "security" OR "encrypt*") AND ("internet of thing*" OR "industr*" OR "factor*" OR "manufactur*" OR "cyber physical system*" OR "infrastructure" OR "smart device*") 
+
+\tcblower
+\textbf{Filter}: Conference papers and articles are selected; English language; Computer science and Engineering are selected as well. 
+
+Using a few lines of Python scripts we filter papers that have "digital twin" in their title. Finally, we were able to find 188 papers from the SpringerLink database. 
+
+\end{tcolorbox}

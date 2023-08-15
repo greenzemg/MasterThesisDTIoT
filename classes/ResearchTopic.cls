@@ -64,8 +64,8 @@
 \ProvideDocumentCommand{\autodot}{}{}
 \ProvideDocumentCommand{\mdtChapapp}{}{}
 \ProvideDocumentCommand{\chapteralign}{}{\raggedright}
-\ProvideDocumentCommand{\chapterfont}{}{\Huge\bfseries}
-\ProvideDocumentCommand{\chapterprefixfont}{}{\LARGE\bfseries}
+\ProvideDocumentCommand{\chapterfont}{}{\LARGE\bfseries}
+\ProvideDocumentCommand{\chapterprefixfont}{}{\Large\bfseries}
 \DeclareDocumentCommand{\@makechapterhead}{ m }{%
 	\abovechapterskip
 	{\parindent \z@ \chapteralign \normalfont
@@ -249,7 +249,8 @@
 
 \usepackage{xcolor} % Required for specifying custom colours
 
-\colorlet{mdtRed}{blue!50!black}
+\colorlet{mdtRed}{red!50!black}
+
 
 %----------------------------------------------------------------------------------------
 %	MARGINS
@@ -526,8 +527,8 @@ bookmarksopen=true,
 bookmarksopenlevel=0,
 hypertexnames=false,
 colorlinks=true,% Set to false to disable coloring links
-citecolor=mdtRed,% The color of citations magneta
-linkcolor=mdtRed,% The color of references to document elements (sections, figures, etc)
+citecolor=blue,% The color of citations magneta
+linkcolor=blue,% The color of references to document elements (sections, figures, etc)
 urlcolor=mdtRed,% The color of hyperlinks (URLs)
 pdfstartview={FitV},
 unicode,

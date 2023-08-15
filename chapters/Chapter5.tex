@@ -1,8 +1,51 @@
-% Chapter 5
+% Chapter 3
 % ======================================================================================================
 % NOTES, TODOS
 
 % ======================================================================================================
 
-\chapter{Conclusion}
-\label{Chapter5} %
+\chapter{Discussion and Future Directions }
+\label{Chapter5} % For referencing the chapter elsewhere, use \ref{Chapter1} 
+In this chapter, we provide a discussion on the result achieved and its implications. Then highlight the research limitation and we conclude the chapter with future work direction. 
+
+\section{Discussion}
+% discuss the implication of lightweight solution 
+Compared to the existing security mechanisms discussed in the literature review, our proposed solution stands out as it is based on lightweight authenticated encryption with associated data (AEAD), coupled with a payload encryption technique. Unlike all of the reviewed approaches that demand high computational resources, our lightweight authenticated encryption ensures data integrity and authenticity without imposing an excessive processing burden on resource-constrained IoT devices.
+
+While the payload encryption technique employed in our solution avoids the necessity of SSL/TLS protocol handshake which is a highly resource-demanding process for resource-constrained devices, the AEAD techniques provide data integrity within the encrypted message without adding additional process steps for message authentication.
+
+ This combination of lightweight authenticated encryption and payload encryption, makes our solution particularly well-suited for real-world )I)IoT deployments where energy efficiency and low computational costs are critical considerations. In this way, our proposed approach offers an effective alternative to secure communication in Industry 4.0 based on the application of Digital Twin and (I)IoT technology, addressing the challenges posed by resource limitations while maintaining the required level of security. 
+
+
+\subsection{Implication of Lightweight Solution}
+% What is the implication 
+% in terms of security, they can be secured, different security solutoin can be implemented 
+
+% From speed -> low latency means low response time for critical incidents 
+
+
+While traditional encryption methods can be highly secure, there are situations that require lightweight encryption solutions, especially in applications where real-time data processing and low latency are critical requirements. For instance, in the power automation system, the minimum tolerable time between fault detection and sending control to the power station should be as low as 4ms \cite{rajkumar_cyber_2020}. Hence, our proposed solution with 2ms for encryption and decryption can be used to meet the requirement of a such system. 
+
+Another implication of this work is related to power consumption. In a scenario where a number of sensors are deployed in a remote area with battery power, the low power consumption of the proposed solution can significantly increase the life span of the battery hence reducing frequent battery charging and replacement. 
+
+% Power -> long life span and less time 
+\section{Limitations}
+While this study demonstrates the feasibility and practicality of employing lightweight encryption algorithms to secure the communication channel between resource-constrained devices and Digital Twin through the proposed communication scheme, it has also limitations like any other research effort.
+
+\textbf{{Scope of Implementation:}} According to El-hajj et.al \cite{el-hajj_analysis_2023} there are more than 80 stream and block cipher algorithms candidates for lightweight cryptographic algorithms 2nd-round NIST competition. However, in this work, we only focus on the implementation of ASCON which is also a lightweight encryption algorithm. Investigating the implementation of various algorithm on various resource-constrained hardware micro-process cloud provide more comprehensive insight. 
+
+\textbf{Performance Measurement:} In this study, two performance metrics, memory, and power, are approximated. Due to time constraints and electronic laboratory resource limitations, a 100\% accurate measurement is not provided. For the memory usage measurement, employing techniques like overwriting the memory with a known value and analysing the changed bit after running the program could provide more accurate than the techniques used in this work. Similarly, for the power consumption, an accurate measurement could have been achieved by running the algorithms on an isolated development board instead measuring the power consumption at the module level. 
+
+Despite these limitations, this research explores the practicability of lightweight encryption algorithms for enhancing security in communication between Digital Twin and (I)IoT. Having in mind these limitations, in the next section, we present future directions for further improvement. 
+
+
+\section{Future Directions}
+% Implementing a resource-efficient secure communication channel is one of the central 
+Based on the insight we gain from this work, the following future directions are proposed for further exploration. 
+
+\textbf{Optimizing ASCON for ESP32 Microprocessor Chip:}
+Different microprocessors have their own instruction architecture. Hence, future research work can be done on the optimization of lightweight encryption (ASCON) algorithms tailored for specific hardware devices in this case ESP32. This might involve, identifying instructions that require less CPU cycle and replacing those instructions in the reference implementation that require more for the same operation. 
+
+\textbf{Secure Remote Access for Resource-constrained Devices:} In addition to securing the communication channel of the resource-constrained device, it is also essential to have secure remote access control solutions tailored specifically for those devices in Industry 4.0. As a future work, authenticated encryption with an associated data (AEAD) family of lightweight algorithms can be further explored to provide remote secure access to sensors and actuators deployed in an industrial zone. 
+
+% In summary, this chapter 
