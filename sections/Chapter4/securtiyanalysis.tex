@@ -1,0 +1,37 @@
+
+\section{Security Analysis}
+The security analysis aims to evaluate the effectiveness and robustness of the implemented communication scheme based on lightweight encryption (ASCON) for securing IoT device messages sent via the MQTT protocol. This analysis addresses the key security properties of the encryption scheme, including data confidentiality and message integrity. Although key management is also another critical aspect of security analysis, it is not considered within the scope of this analysis.
+
+\subsubsection*{Encryption Scheme Overview \& Preliminary Assumption}
+\label{sec:preassum}
+The proposed cryptography for the proposed scheme in this paper is the ASCON algorithm. It is computationally efficient and suitable for resource and power constraints for IoT devices  with a 128-bit level of security. ASCON has been evaluated by a number of security experts and has been found to be secure \cite{dobraunig_ascon_nodate}.
+
+Therefore, as long as the security of ASCON is not broken, the proposed scheme with safe implementation is secure. The only information leaked to the adversary is the associated data, namely the thing ID (id). The thing ID is the additional data (or associated data ) used in our \textit{authenticated encryption with associated data} implementation to retrieve the right key upon receiving the message. However, this does not provide any advantage to an attacker even if it can be accessed in clear text. In addition, we assume that the private (symmetric) key employed for communication purposes is deployed before the communication starts through some sort of secure communication. 
+
+% todo
+\subsubsection{Security Aspect of MQTT Protocol}
+
+It is important to note that the application protocol used, specifically the MQTT protocol, is not encapsulated or secured using TLS or any other security protocol. As a result, all the metadata associated with the MQTT protocol is openly available to the public. This includes the topic names, the message payload sizes, and the timestamps of the messages.
+
+While this may seem like a security vulnerability, it is important to remember that the MQTT protocol is not designed for secure communication. It is designed for lightweight, efficient communication between constrained devices. In the proposed scheme, only the security data exchange in the communication is provided through the AEAD algorithm and payload encryption. However, one can set up a gateway between the (I)IoT device and Digital Twin to provide security over the MQTT protocol. 
+
+\subsubsection*{Scheme Security Attacks }
+In our communication scheme, we rely on the security provided by ASCON as it is the encryption algorithm used to protect the payload. However, we also include the device ID in clear text alongside the encrypted payload for the reason explained in section \ref{sec:preassum} that could introduce weakness in our scheme. Following, we examine potential security attack scenarios that could exploit the availability of the device ID. 
+
+\textbf{\textit{Identity Spoofing Attack:}} An attacker might attempt to create a crafted encrypted payload and use a valid sensor's unique ID to impersonate a legitimate device. However, this message will be detected and discarded by the receiver (Digital Twin) as it will never result in a valid authentication tag. Therefore, As long as the private key of the device is secure and not accessible to potential attackers, the receiver can ensure the integrity and authenticity of the communication process.
+
+\textbf{\textit{Replay Attack}}: 
+An attacker, as a man-in-the-middle, might intercept the communication with the intent of replaying the messages later to perform an attack. Yet, this attack is not feasible since the two communication parties are engaged with fresh nonce for each encryption. Hence, due to the nonce used in ASCON encryption, the proposed scheme is secure against replay attacks \cite{dobraunig_ascon_nodate}.  
+
+% Security Analysis of ASCON
+\subsubsection{Security Attacks on ASCON}
+ASCON has been thoroughly evaluated by various security experts during the competition of CAESAR and no practical weaknesses have been found \cite{dobraunig_ascon_nodate}. The algorithm's employed rounds (linearity and differentially) provide security against known attacks including linear, differential attacks and cube-like attacks \cite{dobraunig_cryptanalysis_2015}
+
+\textbf{\textit{Resistance Against Side-Channel Attack}}: The bit-sliced implementation of the S-boxes in ASCON provides defence against cache-time attacks \cite{dobraunig_ascon_nodate}. This is because bit-sliced S-boxes are implemented in a way that does not require memory access or a lookup table. Instead, they are implemented using bit-level operations, which are difficult to attack.
+
+In addition, the low algebraic degree of the S-boxes in ASCON allows an implementation to be resistant to extracting information from the power consumption or execution time of the algorithm \cite{dobraunig_ascon_nodate}. Using masking \cite{gross_reconciling_2017} and shared-based \cite{gologlu_division_2016} counter-measure techniques, ASCON can be implemented to be resistant against power side-channel attacks. 
+
+
+In this chapter, we present the evaluation of our proposed solution's performance and security aspects. Our analysis aims to assess the efficacy of our approach and how it is secure for data exchange between (I)IoT and Digital Twin.
+During our evaluation, we compared the performance of Ascon to an alternative approach based on AES in terms of key performance metrics, including power efficiency, memory usage, and computational speed. Our findings highlighted that Ascon exhibits superior performance across these performance metrics while maintaining an equivalent level of security as AES-GCM.
+In terms of security analysis, it is important to note that the security of the Ascon algorithm is a key aspect of our proposed solution. By relying on the inherent security characteristics of Ascon, we propose a secure and lightweight communication scheme. 

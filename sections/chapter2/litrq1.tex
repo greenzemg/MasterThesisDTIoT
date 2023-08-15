@@ -1,0 +1,227 @@
+% ======================================================================================================
+% NOTES, TODOS
+%
+% ======================================================================================================
+%
+\subsection{RQ1: { Digital Twin as Security Tool in Industry 4.0}}
+\label{sec:rq1dtsec}
+This subsection aims to answer the first research question of this paper which is how digital twin is used to provide various security services in Industry 4.0. 
+
+Though the integration of operational technology and IT systems in Industry 4.0 increases the risk of cyber attacks \cite{rajivfaleiroDigitalTwinCybersecurity2022}, technologies like Digital Twin offer possibilities to improve security \cite{dietzHarnessingDigitalTwin2022}. In fact, the literature review also suggests that Digital Twin can be applied to enhance security in Industry 4.0 applications across multiple sectors. Table \ref{tbl:lit-bench} summarizes some of the research contributions that show the use of Digital Twin to improve the security of Industry 4.0 in various domains. 
+
+The research papers were classified and analysed based on several criteria, including the target sector (use case), the purpose of DT, the enabling technology used (integrated with DT), the contribution (category of methodology), and the type of study (characteristics of the study). The table demonstrates the wide range of sectors in which Digital Twins can be applied to improve security in industries including satellite, energy, power grid, intelligent transport systems, water, agriculture, the automotive industry, and manufacturing.
+
+The Enabling technologies used in the studies include big data,  AI(machine learning), cloud computing and data analytics, edge computing, blockchain, and NFV, among others. These technologies enable researchers to build DT-based systems equipped with security features for various use cases.
+
+The contributions of the studies were identified as frameworks, platforms, and architectures. We classify a contribution as a platform if the research presents a tool that can be deployed and used to provide security services like intrusion detection. If the authors provide only a high-level overview of the proposed solution, we classify it as an architecture. On the other hand, if details are presented for each component of the architecture, we classify it as a framework.
+
+Regarding the study types, Table \ref{tbl:lit-bench} shows that there are theoretical studies, case-based and experimental-based studies, and review-type studies. Theoretical studies tend to focus on proposing conceptual frameworks and architectures. And case-based studies tries to provide solutions targeting specific industry sectors. Whereas experimental studies tend to evaluate the proposed frameworks and algorithms through an experiment and proof of concept. Note that a study can be both case-based and experimental if an experiment is performed on a target industry sector. 
+
+% \begin{adjustwidth}{-0.5in}{}
+% \begin{minipage}{\textwidth}
+
+% \begin{table}[H]
+% \tiny
+% \centering
+% \caption{\label{tbl:lit-bench} Overview of References by Use Case, Purpose of Digital Twin, Enabling Technology, Contribution Category, and Study Type.}
+% % \resizebox{\linewidth}{!}{
+% \renewcommand{\arraystretch}{2.0} % Increase the row height by a factor of 1.5
+% \begin{NiceTabular}{p{0.1cm}p{2.5cm}p{2.5cm}p{2cm}p{3cm}p{1.5cm}}
+% \CodeBefore
+% % \rowcolors[gray]{2}{0.8}{}[cols=1-2,restart]
+% \Body
+% \toprule
+%     \textbf{Ref}  & \textbf{Use Case}& \textbf{Purpose} & \textbf{Enabling Technology }  & \textbf{Contribution Category} & \textbf{Study type} \\
+%     \midrule
+
+   
+    
+% \bottomrule
+% \end{NiceTabular}
+% % }
+% \end{table}
+
+% --------------------------------------------
+\begin{longtblr}[
+  caption = {Digital Twin: Use Cases, Purpose, Enabling Technology, Contribution Category, and Study Type in References},
+  label = {tbl:lit-bench},
+]{
+  colspec = {|X[0.5cm]|X[2cm]|X[2.9cm]|X[3cm]|X[2cm]|X[2cm]|},
+  rowhead = 1,
+  hlines,
+  row{even} = {gray9},
+  row{1} = {olive9},
+  row{1-Z} = {1em,font=\small}
+} 
+\textbf{Ref}  & \textbf{Use Case}& \textbf{Purpose} & \textbf{Enabling Technology }  & \textbf{Contribution Category} & \textbf{Study type} \\
+
+    \cite{salimBlockchainEnabledSecureDigital2022} & Smart manufacturing & Botnet detection & ML and Blockchain & Framework & Experiment \\
+
+    \cite{xiaoCommandFenceNovelDigitalTwinBased2022} & Smart Home & Intrusion detection and prevention & Deep Learning ( Deep Q-Network) & Platform & Experiment \\
+    
+    \cite{pirbhulalNovelFrameworkReinforcing2022} & Healthcare & Vulnerability Assessment/Testing & - & Framework & Theoretical \\
+    
+    \cite{marksteinerUsingCyberDigital2021} & Automotive & Black-box Testing & - & Framework & Theoretical \\
+    
+    \cite{dietzIntegratingDigitalTwin2020} & ICS & Attack Testing & Analytics & Framework & Experiment \\
+    
+    \cite{grasselliIndustrialNetworkDigital2022} & CPS & Risk Assessment/Testing & cloud Computing, Network Function Virtualization(NFV) & Architecture & Theoretical \\
+    
+    \cite{guoCyberSecurityRisk2021a} & Nuclear Plant & Testing & 3D Modeling, Software Defined Network (SDN) & - & Theoretical \\
+
+    
+    \cite{jiaqiliSpaceSpiderHyper2022} & Satellite & Simulation & Big Data and AI & Platform & - \\
+     
+     \cite{danilczykSmartGridAnomaly2021} & Smart grid & Anomaly detection & Machine Learning & Architecture & Experiment \\
+
+    \cite{shitoleRealTimeDigitalTwin2021} & Energy & Testing & - &  Platform & Case-Study \\
+
+    \cite{saadImplementationIoTBasedDigital2020} & Power grid & Anomaly detection & Cloud Computing and Data Analytics & Framework and Algorithms & Experiment based \\
+    
+    \cite{akbarianIntrusionDetectionDigital2020} & ICS & Simulating and Testing & Machine Learning & Algorithm & Experiment \\
+
+    \cite{dietzHarnessingDigitalTwin2022} & ICS & Simulation & - & Framework and Algorithms & Experiment \\
+
+    \cite{eckhartEnhancingCyberSituational2019} & CPS & Monitoring, Incident Handling, Testing & - & Framework & Theoretical \\
+
+    \cite{maillet-contozEndtoendSecurityValidation2020} & Water, Agriculture & Simulation and Testing & Data Analytics & Architecture & Case study and Experiment \\
+
+    \cite{giovannipaolosellittoEnablingZeroTrust2021} & Smart Grid & device policy enforcement & - & Architecture & Theoretical \\
+
+    \cite{dietzEmployingDigitalTwins2022} & ICS & Testing and Security Assessment & - & Framework & Experiment \\
+
+    \cite{sousaELEGANTSecurityCritical2021} & ICS & Intrusion Detection & Machine Learning & Architecture & Experiment \\
+
+    \cite{xuEfficientAuthenticationVehicular2021} & Automotive Industry & - & - & Framework and Algorithm & Theoretical \\
+    
+   \cite{bittonDerivingCostEffectiveDigital2018a} & ICS & Testing & - & Framework & Experiment \\
+   
+   \cite{glenandbensonjamesandguptamaanakandsandhuravicatheyEdgeCentricSecure2021} & Intelligent Transportation & Access Control & Edge Computing & Architecture & Case-study \\
+
+   \cite{wangDTCPNDigitalTwin2022} & Enterprise Network & Simulation & NFV, Big data processing & Platform & Experiment \\
+
+   \cite{franciaDigitalTwinsIndustrial2021} & ICS & Testing, Vulnerability assessment & - & - & Experiment \\
+
+   \cite{lopezDIGITALTWINSINTELLIGENT2021} & Smart Grid & Detection & Blockchain & Architecture & Theoretical \\
+    
+   \cite{adrienbacueDigitalTwinsEnhanced2022} & Aerospace & Simulation(Attack) & - & - & Case-study \\
+    
+   \cite{veledarDigitalTwinsDependability2019} & Automotive industry & Predictive analytics & - & Platform & - \\
+
+   \cite{holmesDigitalTwinsCyber2021} & - & - & - & - & Review paper \\
+
+   \cite{vargheseDigitalTwinbasedIntrusion2022} & ICS & Intrusion Detection & Machine Learning & Framework & Experiment \\
+
+   \cite{rajivfaleiroDigitalTwinCybersecurity2022} & - & - & - & - & Review paper \\
+
+   \cite{hossenDigitalTwinSelfSecurity2021} & Power Grid & Model & - & Algorithm & Experiment \\
+
+   \cite{luongnguyenDigitalTwinIoT2022} & Intelligent Transport System & Testing and Simulating & - & Platform & Case-study and Experiment \\
+
+    \cite{almeaibedDigitalTwinAnalysis2021} & Automotive Industry & - & Analytics & Framework & Case-study \\
+    
+    \cite{becueCyberFactorySecuringIndustry40with2018} & Manufacturing & Simulation Testing-Training & - & Theoretical \\ 
+
+    \cite{wuDeepLearningDriven2022} & CPS of Drones & Simulation & AI - Deep Learning & Model & Experiment \\
+
+    \cite{salviCyberresilienceCriticalCyber2022} & Power Grid & Situational Awareness & Data Analytics & Model & Theoretical \\
+
+    \cite{chukkapalliCyberPhysicalSystemSecurity2021} & Agriculture sector & Anomaly detection & Machine Learning & Framework & Experiment \\
+
+    \cite{hadarCyberDigitalTwin2020} & Enterprises & - & Analytics & - & Experiment \\
+
+    \cite{kumarBlockchainDeepLearning2022} & IIoT Network & Simulation, Intrusion Detection & Blockchain, Deep Learning & Framework & Experiment \\
+
+    % \cite{sugumarAssessmentMethodDetecting2019} & Water Treatment Plant & Assessment , Simulation & - & Model & - \\
+    % \hline
+
+    \cite{williamdanilczykANGELIntelligentDigital2019} & Smart Grid & Data Visualization & - & Framework & Experiment \\
+
+    \cite{masiSecuringCriticalInfrastructures2023} & Intelligent Transport Systems & - & - & Architecture & - \\
+
+    \cite{kandasamyElectricPowerDigital2022} & Smart Grid & Training & - & Platform & Case-study \\
+
+    % \cite{hussainiTaxonomySecurityDefense2022} & Smart Industries & Simulation and Intrusion Detection & Architecture & Case-study \\
+    % \hline
+
+    \cite{akbarianSecurityFrameworkDigital2021} & ICS & Intrusion Detection & Cloud Computing & Framework, Algorithm & Experiment \\
+
+    % \cite{xuGametheoreticApproachSecure2020} & CPS & Fault detection, Monitoring & - & Framework & Experiment \\
+    % \hline
+
+    \cite{atalayDigitalTwinsApproach2020} & Smart Grid & Testing & - & Framework & Theoretical \\
+
+    \cite{houDigitalTwinRuntime2022} & Satellites and Space & Penetration Testing & - & Framework and Algorithm & Theoretical \\
+
+    % \cite{vakarukDigitalTwinNetwork2021} & Telecom & Training & Machine Learning & Platform & Theoretical \\
+    % \hline
+
+    \cite{rebecchiDigitalTwin5G2022} & 5G Network & Simulation - Training and Testing & Machine learning & Architecture & Experiment \\
+
+    \cite{gehrmannDigitalTwinBased2020} & ICS &  Data sharing & - & Model, Architecture & Case study \\
+
+    \cite{chengzhelaiSPDTSecurePrivacyPreserving2022} & Transportation & - & Cloud & - & - \\
+    
+    \cite{vielberth2021digital} & CPS & Training & - & Platform & Experiment \\
+    
+    % \cite{olivares-rojasCybersecuritySmartGrid2022} & Power grid & Testing & - & Framework & Theoretical \\
+    % \hline
+
+    \cite{suhailSituationalAwareCyberphysical2022} & Automotive industry & Testing & Blockchain & Framework & Use-case \\
+    
+    \cite{harrisonCybersecurityThreatModeling2022a} &  Automotive & Threat Modeling, Testing & Analytics & - & Experiment \\
+
+    \cite{aryaDetectionMaliciousNode2023a} &  Transportation & Detection & Machine learning & Framework & - \\
+    
+    \cite{wangDigitalTwinNetwork2022a} &  5G Network & Detection & - & Framework & - \\
+
+    \cite{xuDigitalTwinbasedAnomaly2023a} &  CPS & Anomaly Detection & Machine Learning & Framework & Case Study \\
+    
+    \cite{dietzUnleashingDigitalTwin2020} &  ICS & Simulation, Testing & - & - & - \\
+    
+    % ... more rows ...
+    \cite{epiphaniouDigitalTwinsCyber2023a} & CPS/IoT & Security Assessment & AI and Modeling and Simulation Tools & - & Experiment through Proof of Concept \\
+    
+    \cite{ayyalusamyHybridDigitalTwin2022a} & Smart Power Grid & Vulnerability Assessment & MATLAB-SIMULINK, Node-RED & Architecture & Experiment through test-bed\\
+    
+    \cite{sunResearchSecurityManagement2021a} & Power Grid & Security Management & Edge Computing & Architecture & Theoretical\\
+    
+    \cite{vanderwalSecuringNetworksIoT2022a} & IoT & Vulnerability Assessment & Automated Adversary Emulation \textit{(Caldera)} & Architecture & Experiment\\
+
+    % ----------------------------------------
+    \cite{liuDistributedCollaborativeAnomaly2021} & Vehicular Network/ Automotive & Anomaly Detection & Machine Learning, Edge Computing & Architecture & Experiment\\
+    
+
+\end{longtblr}
+
+Note that, the data extracted using extraction form from Table \ref{tbl:extraction} and presented in Table \ref{tbl:lit-bench} doesn't include data from papers that focus only on securing the data used by Digital Twin technology.  
+
+
+%----------------------------------------------
+
+% \begin{center}
+% \begin{figure}
+% \begin{adjustwidth}{-5cm}{3cm} % Set the left margin to 2cm
+% \hspace*{-4.5cm}
+% \begin{longtable}{p{0.5cm}p{2cm}p{2.9cm}p{3.0cm}p{3.0cm}p{2.0cm}}
+%     \caption{\label{tbl:lit-bench} Overview of References by Use Case, Purpose of Digital Twin, Enabling Technology, Contribution Category, and Study Type.} \\
+%     \toprule
+%     \textbf{Ref}  & \textbf{Use Case}& \textbf{Purpose} & \textbf{Enabling Technology }  & \textbf{Contribution Category} & \textbf{Study type} \\
+%     \hline
+%     \endfirsthead
+%     \endhead
+    
+% \end{longtable}
+% \end{adjustwidth}
+% \end{figure}
+% \end{center}
+% \input{sections/rt/chapter3/dtconcept.tex}
+
+\input{sections/chapter2/sector.tex}
+
+% \input{sections/rt/chapter3/dtenabling2.tex}
+
+% \input{sections/rt/chapter3/dtusecase.tex}
+
+
+

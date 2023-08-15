@@ -1,0 +1,372 @@
+% Appendix Template
+
+\chapter{AppendixA: Proof of Concept Application Source Code } % Main appendix title
+
+\label{AppendixA} % Change X to a consecutive letter; for referencing this appendix elsewhere, use \ref{AppendixX}
+
+This appendix provides the main source code for the proof of concept application development based on our proposed solution. Note that, the source code for each encryption cryptography algorithm used in this paper is taken from the respective official GitHub repository. 
+
+In addition, various lines of code are indicated and commented on to show how we perform measurements for latency, memory usage and UART logging for power analysis. 
+
+
+\begin{lstlisting}[style=CStyle, caption={Main Source C File of The Proposed Implementation}, label={list:mainc-ascon}]
+
+#include <Arduino.h>
+#include <WiFi.h>
+#include <sstream>
+#include <iomanip>
+#include <PubSubClient.h> // MQTT Client
+// #include <time.h>
+#include <esp_timer.h>
+#include <esp_system.h>
+#include <xtensa/core-macros.h>
+// for generating nonce
+#include <iostream>
+#include <random>
+#include <chrono>
+// Libaries for UART
+#include "driver/uart.h"
+#include "driver/gpio.h"
+
+
+extern "C" {
+  #include "api.h"
+  #include "core.h"
+}
+
+const char*  ssid         = "Linawifi";
+const char*  password     = "Wifi3364";
+
+const char*  mqtt_server  = "65.21.107.159";
+const int    mqtt_port    = 1883;
+const char*  mqtt_user    = "";
+const char*  mqtt_pass    = "";
+
+
+/*----------------------------------------------------------------------*/
+// Define UART number for communication with the GPS.
+/*----------------------------------------------------------------------*/
+static const int RX_BUF_SIZE = 1024;
+
+// Define TX and RX pins for the GPS.
+#define TXD_PIN (GPIO_NUM_17)
+#define RXD_PIN (GPIO_NUM_16)
+
+// Define UART as number 2
+#define UART UART_NUM_2
+
+
+int num = 0;
+
+/*----------------------------------------------------------------------*/
+
+
+
+/*----------------------------------------------------------------------*/
+// Function to generate random nonce of size 'size'
+/*----------------------------------------------------------------------*/
+std::string generateNonce(int size) {
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> dis(0, 255);
+
+    std::string nonce;
+    for (int i = 0; i < size; ++i) {
+        nonce += static_cast<char>(dis(gen));
+    }
+
+    return nonce;
+}
+/*----------------------------------------------------------------------*/
+
+
+WiFiClient   wifi_client;
+PubSubClient pubsub_client(wifi_client);
+
+
+int encrypt_payload_ascon(unsigned char *p_cipher, unsigned char *payload, unsigned char *thingid){
+     // Specify the size of the nonce you want to generate (in bytes)
+    int nonceSize = 16; // Both ASCON and AES-GCM typically uses a 12-byte nonce
+    // Generate a nonce
+    std::string generatedNonce = generateNonce(nonceSize);
+
+    // Convert the generated nonce to a const char array
+    // const char nonce[] = "0123456789abcdef";
+    const char *nonce = generatedNonce.c_str();
+
+    unsigned char n[CRYPTO_NPUBBYTES]; 
+    memcpy(n, nonce, sizeof(n));
+
+    const char key[] = "thisismysymekey1";
+    unsigned char k[CRYPTO_KEYBYTES];
+    memcpy(k, key, sizeof(k));
+
+    unsigned char *a = thingid;
+    unsigned char *m = payload;
+    // unsigned char c[32];
+
+    unsigned long long alen = 16;
+    unsigned long long mlen = 16;
+    unsigned long long clen = CRYPTO_ABYTES;
+
+
+    int result = 0;
+    /* ======================= Cycle Count ======================= */
+    // get esp cycle count
+    // uint32_t StartCycleCount = xthal_get_ccount(); 
+
+
+    /* ======================= Execution time ======================= */
+    // //  Start the timer
+    // uint64_t startTime = esp_timer_get_time();
+
+    /* ======================= Memory Usage ======================= */
+    // measure memory usage before the function call
+    // uint32_t free_memory_before = esp_get_free_heap_size();
+    // printf("Free memory before: %d bytes\n", free_memory_before);
+    // Print the total heap size
+
+    /* ======================= Function call ======================= */
+    const char* logmsg = "[encrypt_payload_ascon] calling crypto_aead_encrypt-ascon.\n";
+    uart_write_bytes(UART, logmsg, strlen(logmsg));
+    result |= crypto_aead_encrypt(p_cipher, &clen, m, mlen, a, alen, (const unsigned char*)0, n, k);
+    const char* logmsg2 = "[encrypt_payload_ascon] calling crypto_aead_encrypt-ascon.\n";
+    uart_write_bytes(UART, logmsg2, strlen(logmsg2));
+
+  
+    /* ======================= End Cycle Count ======================= */
+    // get endcyclecount using esp cycle count
+    // uint32_t endCycleCount = xthal_get_ccount();
+
+    // uint32_t cycleCount = endCycleCount - StartCycleCount;
+    // size_t total_bytes = 64;
+    // double cb_ratio = (double)cycleCount / total_bytes;
+    // double throughput = (double)1 / cb_ratio;
+    // // // print cycle count
+    // printf("Cycle count:cc %u cb_ratio: %f throughput: %f\n", cycleCount, cb_ratio, throughput);
+    
+    
+    /* ======================= End Execution time ======================= */
+    // // Stop the timer
+    // uint64_t endTime = esp_timer_get_time();
+    // // Calculate the execution time
+    // uint64_t executionTime = endTime - startTime;
+    // // print execution time
+    // printf("Execution time-alg: %llu microseconds\n", executionTime);
+
+    /* ======================= End Memory Usage  Measureent=================== */
+    // uint32_t free_memory_after = esp_get_free_heap_size();
+    // // calculate the memory used by the function call
+    // uint32_t memory_used = free_memory_before - free_memory_after;
+    // // print memory used
+    // printf("Memory used: %d bytes\n", memory_used);
+
+    return result;
+ }
+
+unsigned char* const_char_to_unsigned_char(const char* p_str){
+    // Input
+    const char* str = p_str;
+    size_t len = strlen(str);
+
+    // Process
+    // The following block of code is not secure as we are not considering to write null character at the end 
+    // of the string.
+    unsigned char* result = (unsigned char*)malloc(len);
+    if(result != NULL){
+        memcpy(result, str, len);
+        // result[len] = '\0';
+    }
+
+    // Ouput 
+    return result;
+}
+
+std::string float_to_string(float value) {
+  std::ostringstream stream;
+  stream << std::fixed << std::setprecision(2) << value;
+  return stream.str();
+}
+
+std::string convertToHexString(const unsigned char* ptr, size_t size) {
+    std::string hexString;
+    hexString.reserve(size * 2); // Reserve space for the hexadecimal representation
+
+    for (size_t i = 0; i < size; i++) {
+        char hexBuffer[3];
+        snprintf(hexBuffer, sizeof(hexBuffer), "%02x", static_cast<unsigned int>(ptr[i]));
+        hexString += hexBuffer;
+    }
+
+    return hexString;
+}
+
+void publish_temperature_data(float value, float p_altitude) {
+    // Construct topic string.
+    std::string username(mqtt_user, 7);
+    // std::string topic = "temperature/" + username + "/sensor";
+    std::string topic = "ut-sensors";
+
+    // Convert temperature to a string message.
+    std::string tempstr = float_to_string(value);
+    std::string altistr = float_to_string(p_altitude);
+
+    const char payloadcc[] = "{\"tem\":7,\"al\":3}";
+    unsigned char payloaduc[16]; 
+    memcpy(payloaduc, payloadcc, sizeof(payloaduc));
+
+    const char thingIdcc[] = "ut-sensors:esp01";
+    unsigned char thingIduc[16];
+    // Copy the string literal to unsigned char type variable 
+    memcpy(thingIduc, thingIdcc, sizeof(thingIduc));
+
+    unsigned char cipher[32];
+
+    int result = 0;
+    const char* logmsg = "[publish_temperature_data] calling encryption function-ascon.\n";
+    uart_write_bytes(UART, logmsg, strlen(logmsg));
+    result |= encrypt_payload_ascon(cipher, payloaduc, thingIduc);
+    const char* logmsg2 = "[publish_temperature_data] end of encryption function call-ascon.\n";
+    uart_write_bytes(UART, logmsg2, strlen(logmsg2));
+    
+
+    // std::string payloadEncr = encrypt_payload_ascon(payloadText,  );
+    // "{\"payload\":\"bb6e50f539fbd657efe8021a19d101178289d87ccbc056348fd0d08fbc150528\",\"tid\":\"ut-sensors:esp01\"}"
+    //{"payload":"e23841fd76e3d95682097eaafb38f7796fac95ed47e18bbb1ffd5f8d223e7a49","tid":"ut-sensors:esp01"}
+    std::string payload = "{\"payload\":\"";
+    // std::string payload_val = std::string(reinterpret_cast<char*>(cipher), sizeof(cipher));
+    std::string payload_val = convertToHexString(cipher, 32);
+    std::string tid = "\",\"tid\":";
+    std::string tid_val = "\"ut-sensors:esp01\"}";
+
+    std::string msg2 = payload + payload_val + tid + tid_val;
+
+    // Serial.print("Publishing temperature data [");
+    // Serial.print(topic.c_str());
+    // Serial.print("] ");
+    // Serial.println(msg2.c_str());
+    // a1bd73dfea710f93e2782e50284d4c17a7be0d9a62114937fe34b2a32c16fae7
+    // Publish!
+    pubsub_client.publish(topic.c_str(), msg2.c_str(), msg2.length());
+    // #MEM
+    // printf("[publish_temparature_data]:Freep Heap Size Level 2 : %d bytes  minimum: %d bytes\n", esp_get_free_heap_size(), esp_get_minimum_free_heap_size()); 
+}
+
+void setup() {
+  // Connect the board to wife access.
+    Serial.begin(115200);
+    WiFi.begin(ssid, password);
+    delay(10000);
+
+
+    // Initialize the UART connected to the GPS.
+    const uart_config_t uart_config = {
+        .baud_rate = 115200,
+        .data_bits = UART_DATA_8_BITS,
+        .parity    = UART_PARITY_DISABLE,
+        .stop_bits = UART_STOP_BITS_1,
+        .flow_ctrl = UART_HW_FLOWCTRL_DISABLE,
+        .source_clk = UART_SCLK_APB,
+    };
+
+    // Install UART driver
+    uart_driver_install(UART, RX_BUF_SIZE * 2, 0, 0, NULL, 0);
+    uart_param_config(UART, &uart_config);
+    uart_set_pin(UART, TXD_PIN, RXD_PIN, UART_PIN_NO_CHANGE, UART_PIN_NO_CHANGE);
+
+
+    const char* test_str = "[Setup] Entering to main function.\n";
+    uart_write_bytes(UART, test_str, strlen(test_str));
+
+    // #MEM
+    Serial.print("[setup]Total Heap Size First--->>: ");
+    Serial.print(ESP.getHeapSize());
+    Serial.println(" bytes");
+
+
+    // Keep trying to reconnect if not connected yet.
+    while (WiFi.status() != WL_CONNECTED) {
+        delay(500);
+        Serial.println("Connecting to WiFi...");
+    }
+
+    // Set up the mqtt server configuration.
+    pubsub_client.setServer(mqtt_server, mqtt_port);
+}
+
+void reconnect() {
+    // Loop until we're reconnected
+    while (!pubsub_client.connected()) {
+        Serial.print("Attempting MQTT connection...");
+
+        // Attempt to connect
+        if (pubsub_client.connect("", mqtt_user, mqtt_pass)) {
+            Serial.println("connected");
+        } else {
+            Serial.print("failed, rc=");
+            Serial.print(pubsub_client.state());
+            Serial.println(" try again in 5 seconds");
+            delay(5000);
+        }
+    }
+}
+
+void loop() {
+    static int loopCounter = 0; 
+
+    loopCounter++;
+
+    
+    // Get sensor values.
+    float temperature = 9;
+    float altitude = 4;
+
+    // Reconnect if we lost connection.
+    if (!pubsub_client.connected()) {
+        reconnect();
+    }
+    // #MEM
+    // printf("[loop]:Freep Heap Size Level 1: %d bytes  minimum: %d bytes\n", esp_get_free_heap_size(), esp_get_minimum_free_heap_size()); 
+
+    if(loopCounter < 1000) {
+        /* ======================= Execution time ======================= */
+        // Start the timer
+        // uint64_t startTime = esp_timer_get_time();
+
+        /* ======================= RAM Memory Usage ====================== */
+        // printf("[loop]:Freep Heap Size Level free: %d bytes  minimum: %d bytes\n", esp_get_free_heap_size(), esp_get_minimum_free_heap_size()); 
+
+
+        // publish the sensor values 
+        // *****************************************************************
+        // ******************Function Call *****************************
+        //
+        printf("[loop]: Calling publish_temperature_data function-ascon.\n");
+        publish_temperature_data(temperature, altitude);
+
+        // 
+        // ******************Function End ******************************
+        //******************************************************************
+
+
+        /* ======================= End Execution time ======================= */
+        // // Stop the timer
+        // uint64_t endTime = esp_timer_get_time();
+        //  // Calculate the execution time
+        // uint64_t executionTime = endTime - startTime;
+        // // print execution time
+        // printf("Execution time-app: %llu microseconds\n", executionTime);
+    }
+
+    // Update internal loops in mqtt client.
+    pubsub_client.loop();
+
+
+    // Wait for 2s before we read and publish the next sensor value.
+    // Uncomment this line of code during power measurement 
+    if (loopCounter % 100 == 0){
+        delay(10000);
+    }
+    delay(500);
+}
+\end{lstlisting}

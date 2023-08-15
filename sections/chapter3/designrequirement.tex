@@ -1,0 +1,44 @@
+% ------------------------------Note and Outline------------------------
+% 
+% The scheme should lightweight 
+% The scheme should be secure enough 
+% Provide both authentication and encryption 
+%  
+% 
+% ------------------------------End------------------------
+
+
+\section{Design Consideration and Requirement}
+This section outlines the design consideration and requirements that guide the development of our proposed solution (communication scheme) for securing the communication between Digital Twin and (I)IoT. These considerations and requirements are defined primarily in consideration of the resource limitation of (I)IoT devices. 
+
+\subsection{Design Consideration}
+Our proposed solution is based on the following design choices that take into account the limited resource (I)IoT devices have.
+\begin{itemize}
+    \item The scheme should be based on the lightweight application protocol. 
+    \item The underlying cryptographic algorithm should be based on a lightweight encryption algorithm standardized by NIST. 
+\end{itemize}
+
+\subsection{In Scope Requirements}
+\textbf{Performance Requirement}: The proposed solution should be based on a cryptographic algorithm that performs better than traditional algorithms in terms of power consumption, speed, and storage complexity.
+
+\textbf{Security Requirement}: The proposed solution should provide an adequate security level for typical data communication in Industry 4.0 environment. In this regard, an encryption algorithm that provides a minimum 80-bit security level (size of key) should be used. In addition to the above general security requirement, the proposed solution should provide the following security services. 
+\begin{itemize}
+    \item \textit{Message authentication}: The solution should enable the message receiver to check the authenticity of the message 
+    \item \textit{Message Confidentiality}: The solution should provide message confidentiality by encrypting the message. 
+    \item \textit{Data Integrity}: The solution should ensure the integrity of data transmission using checksums or other methods to detect message corruption.
+    \item \textit{Resilience}: The solution should be capable of detecting man-in-the-middle attacks that involve message modification and data injection. 
+\end{itemize}
+
+
+
+
+\subsection{Out of Scope Requirements }
+\begin{itemize}
+    \item The proposed solution does not have a secure key exchange mechanism between Digital Twin and the physical device. In other words, symmetric keys are assumed to be pre-shared before communication starts. 
+    \item The communication protocol (MQTT) at the application level is not encrypted using technologies like SSL/TLS to avoid computation overhead on the constrained device. 
+    
+\end{itemize}
+
+% These design considerations and requirements are take into 
+% proposed communication scheme should meet to be feasible to use in a real-world environment. 
+
