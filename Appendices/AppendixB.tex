@@ -1,0 +1,60 @@
+% Appendix Template
+
+\chapter{AppendixB:  } % Main appendix title
+
+\label{AppendixB} % Change X to a consecutive letter; for referencing this appendix elsewhere, use \ref{AppendixX}
+
+This appendix provides a code snippet that filters search results based on the presence of the term "digital twin" in the title of each paper. Specifically, the script used to extract search results from Springer Link. 
+
+
+\begin{lstlisting}[language=Python, style=CStyle, caption={A python code snippet to identify papers which have "digital twin" in their title }, label={list:mainc-ascon}]
+
+import csv
+
+import re
+
+ 
+counter = 0
+
+results_file = '../data/SpringerLink_130523.csv'
+
+accepted_filename = "../data/SpringerLink_130523_accepted.csv"
+
+accepted_rows = []
+
+ 
+
+with open(results_file, newline='', encoding="utf-8", errors="ignore") as fromfile:
+
+    freader = csv.DictReader(fromfile, delimiter=';')
+
+ 
+
+    for row in freader:
+
+        counter += 1
+
+        found = re.search(r'digital[\s-]{1}twin[s]?', row['Item Title'].lower())
+
+ 
+
+        if found:
+
+            accepted_rows.append(row)
+
+ 
+
+with open(accepted_filename, 'w', newline='') as tofile:
+
+    writer = csv.DictWriter(tofile, fieldnames=freader.fieldnames, delimiter=";")
+
+    writer.writeheader()
+
+    writer.writerows(accepted_rows)
+
+ 
+
+print("count of papers:", counter)
+
+print("count of papers with 'digital twin' in title:", len(accepted_rows))
+\end{lstlisting}

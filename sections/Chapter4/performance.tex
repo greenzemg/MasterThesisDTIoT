@@ -1,8 +1,15 @@
 % \section{Performance Evaluation and Analysis}
 
-This chapter discusses the quantitative assessment of performance metrics such as processing speed(latency), memory requirement, and power consumption. It has a primary  objective of comparing two distinct algorithms; one based on a lightweight and the other based on a heavyweight; both at the function level and within the broader application context of the proposed solution. 
+Performance analysis is a systematic study and measurement of various performance metrics to determine the effectiveness and efficiency of a system, process, or application. This includes factors such as processing speed (latency), memory utilization, and power consumption
 
-we first presented the case scenario of the measurement and then the performance measurement result. Last, the security analysis of the scheme is provided to validate the robustness of the proposed communication scheme. 
+This chapter focuses on the quantitative assessment of performance metrics, specifically processing speed, memory requirements, and power consumption. The objective of this chapter is to compare two distinct algorithms: one based on a lightweight algorithm and the based on a traditional heavyweight encryption algorithm. This comparative analysis is conducted both at the functional level and within the broader application context of the proposed solution.
+
+Before we start the analysis, we present a case scenario that serves as the foundation for our measurements. Subsequently, the chapter reveals the outcomes of our performance measurements, shedding light on the quantitative results derived from the analysis. Last, we delve into a security analysis of the proposed communication scheme. This evaluation aims to validate the robustness and reliability of the proposed communication scheme, thereby ensuring its effectiveness in real-world scenarios.
+
+
+% This chapter discusses the quantitative assessment of performance metrics such as processing speed(latency), memory requirement, and power consumption. It has a primary  objective of comparing two distinct algorithms; one based on a lightweight and the other based on a heavyweight; both at the function level and within the broader application context of the proposed solution. 
+
+% we first presented the case scenario of the measurement and then the performance measurement result. Last, the security analysis of the scheme is provided to validate the robustness of the proposed communication scheme. 
 
 \section{Measurement Case Scenarios}
 
@@ -52,7 +59,7 @@ int crypto_aead_decrypt(
 \section{Performance measurement - Speed, Memory, and Power}
 Depending on the complexity of an algorithm (process round) and the required CPU instruction (operation) there shall be differences in performance between various categories of algorithms. However, it is important to note that there is a trade-off between security and performance. Hence, prior to selecting an algorithm, designers and practitioners need to carefully evaluate the minimal required security level for a given application. 
 
-This section aims to offer insight into the performance of two specific algorithms, namely AES and ASCON. Our focus lies on measuring their processing speed, memory consumption, and power utilization. Furthermore, to establish a benchmark, we incorporate a non-encrypted implementation for comparison purposes.
+This section aims to offer insight into the performance of two specific algorithms, namely AES and ASCON. In both algorithms, the same key size is used. Our focus lies on measuring their processing speed, memory consumption, and power utilization. Furthermore, to establish a benchmark, we incorporate a non-encrypted implementation for comparison purposes.
 
 \subsection{Speed - Running Time}
 % execution time 
@@ -63,7 +70,7 @@ Our experimental setup involves three distinct case scenarios. Firstly, we measu
 
 To obtain accurate measurements, we allow our programs to run 1000 function calls sending data after encryption for each case scenario. We then calculate the average execution time using a Python script that processes the dump file we collected from the device.
 
-As it can be seen from Figure \ref{Fig:time-algorithm} ASCON's execution time is lower than AES-GCM. However, Figure \ref{Fig:time-scheme} shows that our proposed solution performs well when the underlying encryption algorithm is AES-GCM.
+As it can be seen from Figure \ref{Fig:time-algorithm} ASCON's execution time is lower than AES-GCM. Similarly, Figure \ref{Fig:time-scheme} shows that our proposed solution performs well when ASCON is used. These results suggest that ASCON is a promising candidate for use in our proposed solution.
 
 \begin{figure}[H]
         % \centering
@@ -268,7 +275,7 @@ Table \ref{tbl:ins-codesize} provides a summary of the code size measurements fo
 \begin{table}[H]
     \tiny
     \centering
-    \caption{Code Size: No-Encryption, ASCON, AES-GCM }
+    \caption{Code Size (KB): No-Encryption, ASCON, AES-GCM }
     \label{tbl:ins-codesize}
     \resizebox{0.8\textwidth}{!}
     {
@@ -278,8 +285,8 @@ Table \ref{tbl:ins-codesize} provides a summary of the code size measurements fo
         \mc{1}{}  & \mc{1}{No-Encryption}  & \mc{1}{ASCON} & \mc{1}{AES-GCM}\\
         \hline
         Ram \/KB & 59.3 & 59.3  &  68\\
-        Flash & 766.5  & 767.7 &  772.1\\ 
-        Total & 825.8 & 827 &  840.1\\ 
+        Flash KB & 766.5  & 767.7 &  772.1\\ 
+        Total KB & 825.8 & 827 &  840.1\\ 
         % Cycle per Byte &  64.28 & 1094.68 &  31517.90\\ 
         % Time Elapsed $\mu$s & 8.57  & 145.95 &  202.38\\ 
         % Throughput B/$\mu$s & 3.73  & 0.219 &  0.158\\ 
@@ -326,7 +333,7 @@ Table \ref{tbl:ins-codesize} provides a summary of the code size measurements fo
 % The challenge of measuring the memory heap 
 % Explain or provide an analysis of memory for each case 
 
-Measuring the dynamic RAM usage of each algorithm is not as easy as measuring static memory usage. The heap and stack are two types of dynamic memory, making it challenging to keep track of their usage as they are allocated and freed during function calls and returns. One effective technique recommended by NIST is to overwrite the memory with known values before running the program and keep track of the memory cells that are overwritten by the program [ref]. However, due to the complexity of setting it up,  we decided to employ alternative techniques to approximate the dynamic memory usage of each algorithm described as follows.
+Measuring the dynamic RAM usage of each algorithm is not as easy as measuring static memory usage. The heap and stack are two types of dynamic memory, making it challenging to keep track of their usage as they are allocated and freed during function calls and returns. One effective technique recommended by NIST is to overwrite the memory with known values before running the program and keep track of the memory cells that are overwritten by the program. However, due to the complexity of setting it up,  we decided to employ alternative techniques to approximate the dynamic memory usage of each algorithm described as follows.
 
 
 

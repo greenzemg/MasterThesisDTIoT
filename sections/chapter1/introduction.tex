@@ -49,7 +49,7 @@ However, integrating (I)IoT devices into the Industry 4.0 use case has a few cha
 
 
 
-In this regard, the NIST (National Institute of Standards and Technology) is playing a vital role in reviewing and standardizing cryptography algorithms for resource-constrained devices. They have been conducting a competition for decades for secure and lightweight algorithms. They recommend employing security schemes and encryption algorithms specifically designed for constrained devices to address these security requirements \cite{noauthor_nist_2023} low power device.
+In this regard, the NIST (National Institute of Standards and Technology) is playing a vital role in reviewing and standardizing cryptography algorithms for resource-constrained devices. They have been conducting a competition for decades for secure and lightweight algorithms. They recommend employing security schemes and encryption algorithms specifically designed for constrained devices to address these security requirements of low-power devices \cite{noauthor_nist_2023}.
 
 Digital Twin and (I)IoT technologies are being integrated and utilized across various industries, including aerospace engineering, power grid, automobile manufacturing, oil and gas industry, healthcare, and more \cite{tao_digital_2019}. In this context, while (I)IoT devices are used to collect environmental sensor measurements and send them,  Digital Twin is used to process and analyze data for insight and intelligence. This research explores how Digital Twin is used to secure applications in Industry 4.0 and it also proposes a lightweight solution for secure communication between constrained devices and digital twins.
 
@@ -57,13 +57,16 @@ Digital Twin and (I)IoT technologies are being integrated and utilized across va
 
 
 \section{Motivation}
-The motivation behind this research stems from the widespread adoption of Digital Twin technology in Industry 4.0 \cite{atalay_digital_2022} and it's heavily dependent on (I)IoT devices (sensors and actuators). During the systematic literature review, we identify a challenge related to securing communication between Digital Twin and resource-constrained (I)IoT devices. This communication channel carries sensitive data that should be protected and authenticated through an efficient lightweight encryption communication scheme. 
+The motivation behind this research stems from the widespread adoption of Digital Twin technology in Industry 4.0 \cite{atalay_digital_2022} and it's heavily dependent on (I)IoT devices (sensors and actuators). These (I)IoT devices are often resource-constrained devices which are not equipped with the same security features as more powerful devices. This makes them more vulnerable to attack.
 
+% During the systematic literature review, we identify a challenge related to securing communication between Digital Twin and resource-constrained (I)IoT devices. This communication channel carries sensitive data that should be protected and authenticated through an efficient lightweight encryption communication scheme. 
 
 As these technologies--Digital Twin and (I)IoT--become increasingly integrated into critical infrastructure, it becomes crucial to secure the data channels used for interaction and communication between them using a lightweight encryption algorithm. The less resource-demanding nature of lightweight cryptography solutions can also increase the lifespan of sensor power as it uses less power. For example, in Industry 4.0 applications like oil refineries, (I)IoT devices (sensors and actuators ) are often deployed in remote and inaccessible areas. If less power-consuming solutions are implemented, the need for frequent repairs and replacement can be reduced or avoided \cite{williams_survey_2022, noauthor_lightweight_nodate}.
 
 
-Considering the pressing nature of these issues and their potential impact on Industry 4.0 applications, our research endeavours to address the challenges associated with securing the communication channel between Digital Twin and constrained (I)IoT devices. By developing a lightweight communication scheme based on the latest NIST standard lightweight encryption algorithm, we aim to bridge the gap and provide a practical solution that ensures secure and efficient data transfer in resource-constrained (I)IoT environments. Through this research, we seek to contribute to the advancement of secure communication practices and facilitate the seamless integration of Digital Twin and (I)IoT technologies for enhanced operation in the Industry 4.0 era.
+Considering the pressing nature of these issues and their potential impact on Industry 4.0 applications, our research attempts to address the challenges associated with securing the communication channel between Digital Twin and constrained (I)IoT devices. By developing a lightweight communication scheme based on the latest NIST standard lightweight encryption algorithm, we aim to bridge the gap and provide a practical solution that ensures secure and efficient data transfer in resource-constrained (I)IoT environments. To show the efficacy of the proposed solution, we implemented the solution and evaluated its performance in a real-world setting. The results of our evaluation show that our solution is effective in securing the communication between Digital TWin and (I)IoT devices, while also being lightweight and robust.
+
+Through this research, we seek to contribute to the advancement of secure communication practices within the integration of Digital Twin and (I)IoT technologies for enhanced operation in the Industry 4.0.
 
 % In the context of Digital Twin (DT) and (I)IoT, using authenticated encryption the integrity and confidentiality of the data communicated between can be assured. In other words, these security measures help safeguard the confidentiality of data and verify its integrity throughout the communication process \cite{salimBlockchainEnabledSecureDigital2022}.
 
@@ -71,9 +74,9 @@ Considering the pressing nature of these issues and their potential impact on In
 \section{Methodology}
 This research has two aims:-
 \begin{itemize}
-    \item \textit{First}, to conduct a systematic literature review and explore how DT is used to enhance operational technology (OT) and IT security in Industry 4.0 use cases. In addition, we investigate the security methods discussed in previous studies to secure the communication between DT and (I)IoT devices.
+    \item \textit{First}, to conduct a systematic literature review and explore how Digital Twin is used to enhance security in Industry 4.0 use cases. In addition, we investigate the security methods discussed in previous studies to secure the communication between DT and (I)IoT devices.
 
-    \item \textit{Second}, to implement a resource-efficient security mechanism for constrained (I)IoT devices to ensure the confidentiality, integrity and authenticity of data communicated with Digital Twin ( or any cloud-based solution ). 
+    \item \textit{Second}, to implement a resource-efficient security mechanism for constrained (I)IoT end devices to ensure the confidentiality, integrity and authenticity of data communicated with Digital Twin ( or any cloud-based solution ). 
 \end{itemize}
 % This research has two major parts: a systematic literature review of Digital Twin security services in Industry 4.0 and the technical implementation of proposed solutions to secure the communication between Digital Twin and (I)IoT devices.
 
@@ -89,10 +92,15 @@ Both, the systematic literature review and the implementation of the proposed so
     \item \textbf{RQ1: How Digital Twin is used to enhance the security of Industry 4.0 applications?} \label{lbl:rq1} This research question aims to identify in what way Digital Twin is used to provide security services such as intrusion detection, vulnerability assessment and so on to enhance the security aspect of the Industry 4.0 process.
     \item \textbf{RQ2: What are the security mechanisms (ways) presented in the literature to ensure the confidentiality, integrity, and authenticity of data (message ) communicated between Digital Twin and its mapped physical devices?} This research question focuses on the identification of cryptographic or any other security solutions that are used to improve the security of digital channels for data communication between Digital Twin and (I)IoT devices. 
     \item \textbf{RQ3: How to ensure the security requirement of a communication channel between a Digital Twin and resource-constrained (I)IoT device?} This research question aims to provide an answer to the challenge of implementing security solutions for resource-constrained devices such as sensors and actuators that send and receive data to and from Digital Twin. 
-    \item \textbf{RQ4: What is the performance analysis of the proposed scheme?} This research question aims to provide insight into the performance difference between the lightweight-based (ASCON - recently standardized lightweight encryption) implementation of the proposed solution and the traditional-based (AES - existing and conventional) implementation. 
+    \item \textbf{RQ4: How efficient is the proposed solution?} This research question aims to provide insight into the performance difference between the lightweight-based (ASCON - recently standardized lightweight encryption) implementation of the proposed solution and the traditional-based (AES - existing and conventional) implementation. 
 \end{itemize}
 
 Research question 1 (\textbf{RQ1}) and 2 (\textbf{RQ2}) are answered in chapter \ref{Chapter2}. The answer for research questions 3 (\textbf{RQ3}) and 4 is provided in chapter \ref{Chapter3} and chapter \ref{Chapter4} respectively. 
+
+\section{Hypothesis}
+\label{sec:hypo}
+We hypothesize that there exists a research gap in how to secure the communication between the Digital Twin and resource-constrained devices using lightweight solutions. This is because lightweight encryption algorithms have only recently emerged and are still being standardized. As a result, we expect limited research on how to use them to secure communication between Digital Twins and resource-constrained devices. 
+
 
 \section{Contribution}
 This research has four contributions which can be summarized as follows:

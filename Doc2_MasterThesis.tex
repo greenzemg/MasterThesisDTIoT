@@ -159,7 +159,7 @@ headsepline, % Uncomment to get a line under the header
 %	THESIS INFORMATION
 %----------------------------------------------------------------------------------------
 
-\thesistitle{Securing Application of Digital Twin and IoT in Industry 4.0 Using Lightweight Authenticated Encrypted Payload} % Your thesis title, this is used in the title and abstract, print it elsewhere with \ttitle
+\thesistitle{Digital Twin and Securing IoT Applications in Industry 4.0} % Your thesis title, this is used in the title and abstract, print it elsewhere with \ttitle
 \supervisor{Dr.Ing Mohammed \textsc{El-hajj} T.M.  \textsc{ITÄPELTO}(Ph.D. Candidate )} % Your supervisor's name, this is used in the title page, print it elsewhere with \supname
 \examiner{} % Your examiner's name, this is not currently used anywhere in the template, print it elsewhere with \examname
 \degree{Master of Computer Science} % Your degree name, this is used in the title page and abstract, print it elsewhere with \degreename
@@ -244,7 +244,7 @@ headsepline, % Uncomment to get a line under the header
 
 \begin{abstract}
 \addchaptertocentry{\abstractname} % Add the abstract to the table of contents
-\textbf{\textit{Abstract--}}Connectivity and data exchange are key features of Industry 4.0. In this paradigm,  (Industrial) Internet of Things ((I)IoT) devices play a vital role in facilitating the collection and transmission of environmental data from the physical system to the central server for processing and analysis(Digital Twin). Although (I)IoT devices play a critical role in this process, they are not inherently equipped (with power, memory and computational) to run traditional encryption mechanisms like AES to secure the data they transmit over wired or wireless channels. This two-part research aims in the first part to explore the potential of Digital Twins (DT) in securing Industry 4.0 applications and the security mechanism discussed in the literature to secure the data communicated between (I)IoT and Digital Twin (DT) through a Systematic Literature Review (SLR). In the second part, we proposed a communication scheme for constrained devices based on payload authenticated encryption using a recently standardized lightweight encryption algorithm called ASCON. The result SLR revealed that Digital Twin is growing and being widely adopted as a security tool particularly in Industry 4.0 using enabling technology like machine learning, data analytics, blockchain, cloud, and 5G network to provide security solutions such as intrusion detection, vulnerability assessment, cyber range, and threat intelligence. The proposed communication scheme provides an efficient way to ensure the confidentiality, integrity, and authenticity of communicated data between constrained (I)IoT devices and cloud-hosted Digital Twin. The performance of the proposed scheme with three different implementations(without encryption, ASCON, and AES-GCM) is compared in terms of speed, memory usage and power consumption. The results show that ASCON outperforms AES-GCM in terms of speed and memory footprint.
+\textbf{\textit{Abstract--}}Connectivity and data exchange are key features of Industry 4.0. In this paradigm,  (Industrial) Internet of Things ((I)IoT) devices play a vital role in facilitating the collection and transmission of environmental data from the physical system to the central server for processing and analysis(Digital Twin). Although (I)IoT devices play a critical role in this process, they are not inherently equipped (with power, memory and computational) to run traditional encryption mechanisms like AES to secure the data they transmit over wired or wireless channels. This two-part research aims in the first part to explore the potential of Digital Twins (DT) in securing Industry 4.0 applications and the security mechanism discussed in the literature to secure the data communicated between (I)IoT and Digital Twin (DT) through a Systematic Literature Review (SLR). In the second part, we proposed a communication scheme for constrained devices based on payload authenticated encryption using a recently standardized lightweight encryption algorithm called ASCON. The result SLR revealed that Digital Twin is being widely adopted as a security tool particularly in Industry 4.0 using enabling technology like machine learning, data analytics, blockchain, cloud, and 5G network to provide security solutions such as intrusion detection, vulnerability assessment, cyber range, and threat intelligence. The proposed communication scheme provides an efficient way to ensure the confidentiality, integrity, and authenticity of communicated data between constrained (I)IoT devices and cloud-hosted Digital Twin. The performance of the proposed scheme with three different implementations(without encryption, ASCON, and AES-GCM) is compared in terms of speed, memory usage and power consumption. The results show that ASCON outperforms AES-GCM in terms of speed and memory footprint.
 \end{abstract}
 
 
@@ -265,7 +265,10 @@ headsepline, % Uncomment to get a line under the header
 
 \listoffigures % Prints the list of figures
 
+\lstlistoflistings % List of Listings
+
 \listoftables % Prints the list of tables
+
 
 %----------------------------------------------------------------------------------------
 %	ABBREVIATIONS
@@ -306,7 +309,7 @@ headsepline, % Uncomment to get a line under the header
 % Uncomment the lines as you write the Appendices
 
 \include{Appendices/AppendixA}
-%\include{Appendices/AppendixB}
+\include{Appendices/AppendixB}
 %\include{Appendices/AppendixC}
 
 %----------------------------------------------------------------------------------------
